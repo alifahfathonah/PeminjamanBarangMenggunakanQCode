@@ -119,8 +119,8 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="laporan.php" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+            <a href="logout.php" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
               Log Out
               </p>

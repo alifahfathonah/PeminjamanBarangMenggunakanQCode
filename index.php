@@ -20,7 +20,9 @@
      if ($result->num_rows > 0) {
          $row = mysqli_fetch_assoc($result);
          $_SESSION['username'] = $row['username'];
-         header("Location: dashboard.php");
+        // header("Location: dashboard.php");
+         // arahkan ke halaman index pasca login
+			echo "<script> alert('selamat datang ".$_SESSION['username']."'); window.location.href='dashboard.php'; </script>";
      } else {
          echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
      }

@@ -10,7 +10,7 @@
     </div>
     <div class="info">
       <b><h4><font color="white">Hi, <?php echo$_SESSION['username']; ?></h4></font></b>
-      <a href="bioadmin.php" class="d-block">Lihat Profile</a>
+      <a href="profile.php" class="d-block">Lihat Profile</a>
      
     </div>
   </div>
@@ -29,7 +29,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="dashboard.php" class="nav-link">
+        <a href="barang.php" class="nav-link">
           <i class="nav-icon fas fa-cube"></i>
           <p>
            Data Barang
@@ -37,7 +37,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="dashboard.php" class="nav-link">
+        <a href="siswa.php" class="nav-link">
           <i class="nav-icon fas fa-users"></i>
           <p>
            Data Ketua kelas
@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="databarang.php" class="nav-link">
+        <a href="peminjaman.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-list"></i>
           <p>
            Peminjaman
@@ -53,7 +53,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="peminjaman.php" class="nav-link">
+        <a href="pengembalian.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-check"></i>
           <p>
           Pengembalian
@@ -61,7 +61,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="pengembalian.php" class="nav-link">
+        <a href="laporan.php" class="nav-link">
           <i class="nav-icon fas fa-file-alt"></i>
           <p>
           Laporan

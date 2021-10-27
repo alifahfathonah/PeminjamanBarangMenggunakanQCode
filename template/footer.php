@@ -1,8 +1,8 @@
 <footer>
  <!-- /.content-wrapper -->
  <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="#">Sistem Infromasi Peminjaman</a>.</strong>
-    All rights reserved.
+    <strong>Selamat Datang di <a href="#">Sistem Infromasi Peminjaman</a></strong>
+    SMK Negeri 1 Turen
   </footer>
 
   <!-- Control Sidebar -->

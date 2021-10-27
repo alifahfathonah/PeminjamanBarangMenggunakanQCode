@@ -60,9 +60,9 @@
             <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
           </div>
          
-          <button name="submit" class="btn">Loginn</button>
+          <button name="submit" class="btn">Login</button>
           
-          <p class="login-register-text">Do you have an account ? <a href="register.php">Register </a></p>
+          <p class="login-register-text">Don't have an account ? <a href="register.php">Register </a></p>
         </form>
       </div>
     </div>

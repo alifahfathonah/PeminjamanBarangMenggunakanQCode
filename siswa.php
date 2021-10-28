@@ -40,7 +40,7 @@ include'config.php';
     <!-- /.content-header -->
     
     <div class="col-sm-6">
-		<a href="siswa-input.php" class="btn btn-success" data-toggle="modal"><i class="nav-icon fas fa-plus">&#xE147;</i> <span>Tambah Data</span></a>
+        <a href="siswa-input.php" class="btn btn-success">Tambah Data</a>
 	</div>
     
     <br>
@@ -58,7 +58,7 @@ include'config.php';
                     <th>ID Siswa</th>
                     <th>Nama</th>
                     <th>Kelas</th>
-                    <th>No HP</th>
+                    <th>No Handphone</th>
                     <th>Aksi</th>
                 </tr>
                 </thead>
@@ -115,8 +115,9 @@ include'config.php';
                 <td><?php echo $r_tampil_siswa['SwKelas']; ?></td>
                 <td><?php echo $r_tampil_siswa['SwNoHp']; ?></td>
                 <td>
-					<a href="siswa-edit.php" class="edit"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
-					<a href="siswa-delete.php" class="delete"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
+                    <a href="siswa-detail.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
+                    <a href="siswa-edit.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
+					<a href="siswa-delete.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                 </td>
             </tr>
             <?php 

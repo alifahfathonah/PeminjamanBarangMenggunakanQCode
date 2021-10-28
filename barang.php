@@ -39,9 +39,9 @@ include'config.php';
     </div>
     <!-- /.content-header -->
     
-    <div class="col-sm-6">
-		<a href="barang-input.php" class="btn btn-success" data-toggle="modal"><i class="nav-icon fas fa-plus">&#xE147;</i> <span>Tambah Data</span></a>
-	</div>
+    <div class="col-12">
+        <a href="barang-input.php" class="btn btn-success">Tambah Data</a>
+    </div>
     
     <br>
     <!-- Main content -->
@@ -117,8 +117,9 @@ include'config.php';
                 <td><?php echo $r_tampil_barang['BrgSpesifikasi']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgKondisi']; ?></td>
                 <td>
-					<a href="barang-edit.php" class="edit"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
-					<a href="barang-delete.php" class="delete"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
+                    <a href="barang-detail.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
+                    <a href="barang-edit.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
+					<a href="barang-delete.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                 </td>
             </tr>
             <?php 

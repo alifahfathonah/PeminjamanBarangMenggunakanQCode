@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="peminjaman.php" class="nav-link">
+        <a href="transaksi-peminjaman.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-list"></i>
           <p>
            Peminjaman
@@ -53,7 +53,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="pengembalian.php" class="nav-link">
+        <a href="transaksi-peminjaman.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-check"></i>
           <p>
           Pengembalian

@@ -11,6 +11,7 @@ if (isset($_SESSION['username'])) {
 }
  
 if (isset($_POST['submit'])) {
+    $nama = $_POST['nama'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = md5($_POST['password']);
@@ -20,8 +21,8 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT * FROM users WHERE email='$email'";
         $result = mysqli_query($conn, $sql);
         if (!$result->num_rows > 0) {
-            $sql = "INSERT INTO users (username, email, password)
-                    VALUES ('$username', '$email', '$password')";
+            $sql = "INSERT INTO users (nama, username, email, password)
+                    VALUES ('$nama', '$username', '$email', '$password')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo "<script>alert('Selamat, registrasi berhasil!')</script>";
@@ -60,6 +61,10 @@ if (isset($_POST['submit'])) {
       <form action="" method="POST" class="sign-in-form">
           <h1 class="title">Welcome!</h1>
           <h2 class="title">Please Register</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Nama" name="nama" value="<?php echo $nama; ?>" required>
+          </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>

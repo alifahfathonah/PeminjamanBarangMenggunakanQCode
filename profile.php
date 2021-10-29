@@ -1,25 +1,20 @@
-<?php
-session_start();// menjalankan sesion PHP 
-include'config.php';
-?>
+<?php 
+    session_start();
+    include'config.php';
+    // $IdUser = $_GET['IdUser']; 
+    // $q_tampil_user = mysqli_query($conn,"SELECT * FROM users WHERE IdUser = '$IdUser'"); 
+    // $r_tampil_user = mysqli_fetch_array($q_tampil_user); 
+
+?> 
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | User Profile</title>
+  <title> User Profile</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -59,19 +54,19 @@ include'config.php';
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center"><?php echo$_SESSION['nama']; ?></h3>
+                <h3 class="profile-username text-center">Rifatus</h3>
 
-                <p class="text-muted text-center"><?php echo$_SESSION['jabatan']; ?></p>
+                <p class="text-muted text-center">Admin Staf</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
                     <b>Username</b> <a class="float-right"> <?php echo$_SESSION['username']; ?></a>
                   </li>
                   <li class="list-group-item">
-                    <b>Email</b> <a class="float-right"> <?php echo$_SESSION['email']; ?></a>
+                    <b>Email</b> <a class="float-right"> adminstaf@gmail.com</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Password</b> <a class="float-right"> <?php echo$_SESSION['password']; ?></a>
+                    <b>Password</b> <a class="float-right"> admin12345</a>
                   </li>
                 </ul>
 
@@ -89,39 +84,57 @@ include'config.php';
             <!-- About Me Box -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">About Me</h3>
+                <h3 class="card-title">Edit Profile</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Education</strong>
-
-                <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
-                </p>
-
-                <hr>
-
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                <p class="text-muted">Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">UI Design</span>
-                  <span class="tag tag-success">Coding</span>
-                  <span class="tag tag-info">Javascript</span>
-                  <span class="tag tag-warning">PHP</span>
-                  <span class="tag tag-primary">Node.js</span>
-                </p>
-
-                <hr>
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              
+              <div class="form-group ">
+                <i class="fas fa-user"></i>
+                <label>Username</label>
+                <input type="text" placeholder="Username" name="Username" value="" class="form-control" required>
+              </div>
+              <div class="form-group ">
+                <i class="fas fa-envelope"></i>
+                <label>Email</label>
+                <input type="text" placeholder="Email" name="Email" value="" class="form-control" required>
+              </div>
+              <div class="form-group ">
+                <!-- <i class="fas fa-user"></i> -->
+                <label>Nama</label>
+                <input type="text" placeholder="Nama" name="nama" value="" class="form-control" required>
+              </div>
+              <div class="form-group ">
+                <!-- <i class="fas fa-user"></i> -->
+                <label>Jabatan</label>
+                <input type="text" placeholder="Jabatan" name="Jabatan" value="" class="form-control" required>
+              </div>
+              <div class="form-group ">
+                <i class="fas fa-lock"></i>
+                <label>Password </label>
+                 <input type="password" placeholder="Password" name="password" value=""  class="form-control"required>
+              </div>
+              <div class="form-group ">
+                <i class="fas fa-lock"></i>
+                <label>Confirm Password</label>
+                 <input type="password" placeholder="Confirm Password" name="password" value=""  class="form-control"required>
+              </div>
+              <div class="form-group">
+                    <label for="exampleInputFile">Foto</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                      <button type="button" class="btn btn-block bg-gradient-primary">Save</button>
+                      <button type="button" class="btn btn-block bg-gradient-danger">Cancel</button>
+                    
               </div>
               <!-- /.card-body -->
             </div>

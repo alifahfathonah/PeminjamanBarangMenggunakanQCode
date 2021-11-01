@@ -85,7 +85,7 @@ include'config.php';
                         $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                                INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
+                                INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
 								WHERE transaksi.IdTransaksi LIKE '%$pencarian%' 
                                 OR  transaksi.TglPinjam LIKE '%$pencarian%'
                                 OR  transaksi.TglKembali LIKE '%$pencarian%'
@@ -101,7 +101,7 @@ include'config.php';
                         $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                                INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
+                                INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
                                 WHERE transaksi.status = 'Pinjam'
 								ORDER BY transaksi.IdTransaksi DESC 
 								LIMIT $posisi, $batas"; 
@@ -113,7 +113,7 @@ include'config.php';
                             $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,  transaksi.TglPinjam, 
                             transaksi.TglKembali, transaksi.status FROM transaksi 
                             INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                            INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
+                            INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
                             WHERE transaksi.status = 'Pinjam'
                             ORDER BY transaksi.IdTransaksi DESC 
                             LIMIT $posisi, $batas"; 

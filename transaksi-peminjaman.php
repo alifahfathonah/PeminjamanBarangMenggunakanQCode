@@ -82,11 +82,10 @@ include'config.php';
                 if($_SERVER['REQUEST_METHOD'] == "POST") { 
                     $pencarian = trim(mysqli_real_escape_string($db, $_POST['pencarian'])); 
                     if($pencarian != "") { 
-                        $sql = "SELECT transaksi.IdTransaksi, barang.IdBarang, transaksi.Nama, siswa.SwKelas, barang.BrgNama, transaksi.TglPinjam, 
+                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
-                                INNER JOIN barang ON barang.IdBarang = barang.IdBarang
-                                INNER JOIN barang ON barang.BrgNama = barang.BrgNama
-                                INNER JOIN tbbuku ON siswa.SwKelas = siswa.SwKelas
+                                INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
+                                INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
 								WHERE transaksi.IdTransaksi LIKE '%$pencarian%' 
                                 OR  transaksi.TglPinjam LIKE '%$pencarian%'
                                 OR  transaksi.TglKembali LIKE '%$pencarian%'
@@ -99,11 +98,10 @@ include'config.php';
                         $queryJml = $sql; 
 
                     } else { 
-                        $query = "SELECT transaksi.IdTransaksi, barang.IdBarang, transaksi.Nama, siswa.SwKelas, barang.BrgNama, transaksi.TglPinjam, 
+                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
-                                INNER JOIN barang ON barang.IdBarang = barang.IdBarang
-                                INNER JOIN barang ON barang.BrgNama = barang.BrgNama
-                                INNER JOIN tbbuku ON siswa.SwKelas = siswa.SwKelas
+                                INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
+                                INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
                                 WHERE transaksi.status = 'Pinjam'
 								ORDER BY transaksi.IdTransaksi DESC 
 								LIMIT $posisi, $batas"; 
@@ -112,11 +110,10 @@ include'config.php';
                     }
                 }
                 else { 
-                            $query = "SELECT transaksi.IdTransaksi, barang.IdBarang, transaksi.Nama, siswa.SwKelas, barang.BrgNama, transaksi.TglPinjam, 
+                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,  transaksi.TglPinjam, 
                             transaksi.TglKembali, transaksi.status FROM transaksi 
-                            INNER JOIN barang ON barang.IdBarang = barang.IdBarang
-                            INNER JOIN barang ON barang.BrgNama = barang.BrgNama
-                            INNER JOIN tbbuku ON siswa.SwKelas = siswa.SwKelas
+                            INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
+                            INNER JOIN siswa ON siswa.SwKelas = siswa.SwKelas
                             WHERE transaksi.status = 'Pinjam'
                             ORDER BY transaksi.IdTransaksi DESC 
                             LIMIT $posisi, $batas"; 

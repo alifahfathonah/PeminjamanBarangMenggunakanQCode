@@ -17,6 +17,15 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
+<?php
+			$username = $_SESSION['username']; // mengambil username dari session yang login
+			
+			$sql = $conn->query("SELECT * FROM users WHERE username='$username'"); // query memilih entri username pada database
+			if(mysqli_num_rows($sql) == 0){
+			}else{
+				$row = mysqli_fetch_assoc($sql);
+			}
+?>
 <div class="wrapper">
  <?php include 'template/header.php';?>
 <?php include 'template/sidebar.php';?>
@@ -54,19 +63,16 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Rifatus</h3>
+                <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
 
-                <p class="text-muted text-center">Admin Staf</p>
+                <p class="text-muted text-center"><?php echo $row['jabatan']; ?></p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Username</b> <a class="float-right"> <?php echo$_SESSION['username']; ?></a>
+                    <b>Username</b> <a class="float-right"> <?php echo $row['username']; ?></a>
                   </li>
                   <li class="list-group-item">
-                    <b>Email</b> <a class="float-right"> adminstaf@gmail.com</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Password</b> <a class="float-right"> admin12345</a>
+                    <b>Email</b> <a class="float-right"> <?php echo $row['email']; ?></a>
                   </li>
                 </ul>
 

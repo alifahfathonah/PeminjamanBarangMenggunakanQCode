@@ -18,7 +18,7 @@ include'config.php';
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Peminjaman</h1>
+            <h1 class="m-0 text-dark">Data Pengembalian</h1>
           </div><!-- /.col -->
           <div class="form-inline"> 
             <div align="right"> 
@@ -102,10 +102,10 @@ include'config.php';
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                                 INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
-                                WHERE transaksi.status = 'Pinjam'
+                                WHERE transaksi.status = 'Kembali'
 								ORDER BY transaksi.IdTransaksi DESC 
 								LIMIT $posisi, $batas"; 
-                        $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'"; 
+                        $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Kembali'"; 
                         $no = $posisi * 1; 
                     }
                 }
@@ -114,10 +114,10 @@ include'config.php';
                             transaksi.TglKembali, transaksi.status FROM transaksi 
                             INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                             INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
-                            WHERE transaksi.status = 'Pinjam'
+                            WHERE transaksi.status = 'Kembali'
                             ORDER BY transaksi.IdTransaksi DESC 
                             LIMIT $posisi, $batas"; 
-                        $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'"; 
+                        $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Kembali'"; 
                         $no = $posisi * 1; 
                 }
 
@@ -142,8 +142,8 @@ include'config.php';
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>
                 <td>
                    
-                    <div class="tombol-opsi-container"><a href="transaksi-pengembalian-proses.php?&IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>&IdBarang=<?php echo $r_tampil_transaksi['IdBarang']; ?>&TglKembali=<?php echo $r_tampil_transaksi['TglKembali']; ?>
-                    &BrgNama=<?php echo $r_tampil_transaksi['BrgNama']; ?>&SwKelas=<?php echo $r_tampil_transaksi['SwKelas']; ?>" onclick = "return confirm ('Apakah Anda Yakin ingin mengembalikan Barang ini ?')" class="btn btn-danger">Kembalikan</a></div>
+                    <div class="tombol-opsi-container"><a href="proses/transaksi-hapus.php?id=<?php echo $r_tampil_transaksi['idtransaksi'];?>" 
+                    onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="btn btn-danger">Hapus</a></div> 
 					
                 </td>
             </tr>

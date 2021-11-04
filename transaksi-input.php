@@ -26,7 +26,7 @@ include'config.php';
     <!-- /.content-header -->
     
     <!-- Main content -->
-    <form action="barang-input-proses.php" method="POST">
+    <form action="transaksi-input-proses.php" method="POST">
                 <div class="card-body">
                   <div class="row">
                   <div class="col-md-6">
@@ -39,19 +39,19 @@ include'config.php';
                     <label>ID Barang</label>
                     <select name="IdBarang" class="form-control">
 					          <option value="" select="selected">Pilih ID Barang</option>
-					<?php
-						$query = "SELECT * FROM barang
-								
-								ORDER BY IdBarang";
+                      <?php
+                        $query = "SELECT * FROM barang
+                            
+                            ORDER BY IdBarang";
 
-						//$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
-						$q_tampil_barang = mysqli_query($conn, $query); 
+                        //$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
+                        $q_tampil_barang = mysqli_query($conn, $query); 
 
-						while($r_tampil_barang=mysqli_fetch_array($q_tampil_barang)) {
-							echo"<option value=$r_tampil_barang[IdBarang]>$r_tampil_barang[IdBarang] | $r_tampil_barang[BrgNama]</option>";
-						}
-					?>
-				</select>
+                        while($r_tampil_barang=mysqli_fetch_array($q_tampil_barang)) {
+                          echo"<option value=$r_tampil_barang[IdBarang]>$r_tampil_barang[IdBarang] | $r_tampil_barang[BrgNama]</option>";
+                        }
+                      ?>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label>Nama Peminjaman</label>
@@ -61,19 +61,19 @@ include'config.php';
                     <label>Kelas</label>
                     <select name="SwKelas" class="form-control">
 					          <option value="" select="selected">Pilih Kelas</option>
-					<?php
-						$query = "SELECT * FROM siswa
-								
-								ORDER BY IdSiswa";
+                      <?php
+                        $query = "SELECT * FROM siswa
+                            
+                            ORDER BY IdSiswa";
 
-						//$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
-						$q_tampil_siswa = mysqli_query($conn, $query); 
+                        //$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
+                        $q_tampil_siswa = mysqli_query($conn, $query); 
 
-						while($r_tampil_siswa=mysqli_fetch_array($q_tampil_siswa)) {
-							echo"<option value=$r_tampil_siswa[IdSiswa]>$r_tampil_siswa[SwKelas] | $r_tampil_siswa[SwNoHp]</option>";
-						}
-					?>
-				</select>
+                        while($r_tampil_siswa=mysqli_fetch_array($q_tampil_siswa)) {
+                          echo"<option value=$r_tampil_siswa[SwKelas]>$r_tampil_siswa[SwKelas] | $r_tampil_siswa[SwNoHp]</option>";
+                        }
+                      ?>
+                    </select>
                   </div>
                   
                   <!-- Kolom Dua -->
@@ -92,7 +92,7 @@ include'config.php';
                           $q_tampil_barang = mysqli_query($conn, $query); 
 
                           while($r_tampil_barang=mysqli_fetch_array($q_tampil_barang)) {
-                            echo"<option value=$r_tampil_barang[IdBarang]>$r_tampil_barang[BrgNama]</option>";
+                            echo"<option value=$r_tampil_barang[BrgNama]>$r_tampil_barang[BrgNama]</option>";
                           }
                         ?>
 				            </select>
@@ -105,8 +105,12 @@ include'config.php';
                     <label>Tanggal Kembali</label>
                     <input type="date" name="TglKembali" value="<?php echo $tgl; ?>" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label>Status</label>
+                    <input type="text" name="status" placeholder="Status" class="form-control">
+                  </div>
                   <div class="col-12">
-                    <a href="barang.php" class="btn btn-danger float-right">Batal</a>
+                    <a href="transaksi-peminjaman.php" class="btn btn-danger float-right">Batal</a>
                     <input type="submit" value="Simpan" class="btn btn-primary float-right">
                   </div>
                 </div>

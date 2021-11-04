@@ -20,12 +20,6 @@ include'config.php';
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Sistem Informasi Peminjaman Barang</h1>
           </div><!-- /.col -->
-          <!-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </div>/.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -47,7 +41,7 @@ include'config.php';
               <div class="icon">
                 <i class="ion ion-cube"></i>
               </div>
-              <a href="peminjaman.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="transaksi-peminjaman.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -62,7 +56,7 @@ include'config.php';
               <div class="icon">
                 <i class="ion ion-folder"></i>
               </div>
-              <a href="pengembalian.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="transaksi-pengembalian.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

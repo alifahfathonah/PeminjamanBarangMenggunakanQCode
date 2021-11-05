@@ -39,10 +39,6 @@ include'config.php';
     </div>
     <!-- /.content-header -->
     
-    <div class="col-12">
-        <a href="transaksi-input.php" class="btn btn-success">Tambah Data</a>
-    </div>
-    
     <br>
     <!-- Main content -->
     <section class="content">
@@ -63,7 +59,7 @@ include'config.php';
                     <th>Tanggal Pinjam</th>
                     <th>Tanggal Kembali</th>
                     <th>Status </th>
-                    <th>Aksi</th>
+                    <!-- <th>Aksi</th> -->
                 </tr>
                 </thead>
                 <tbody> 
@@ -140,12 +136,6 @@ include'config.php';
                 <td><?php echo $r_tampil_transaksi['TglPinjam']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglKembali']; ?></td> 
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>
-                <td>
-                   
-                    <div class="tombol-opsi-container"><a href="proses/transaksi-hapus.php?id=<?php echo $r_tampil_transaksi['idtransaksi'];?>" 
-                    onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="btn btn-danger">Hapus</a></div> 
-					
-                </td>
             </tr>
             <?php 
                         $nomor++;  

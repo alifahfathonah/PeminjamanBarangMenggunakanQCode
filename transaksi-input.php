@@ -70,7 +70,7 @@ include'config.php';
                         $q_tampil_siswa = mysqli_query($conn, $query); 
 
                         while($r_tampil_siswa=mysqli_fetch_array($q_tampil_siswa)) {
-                          echo"<option value=$r_tampil_siswa[SwKelas]>$r_tampil_siswa[SwKelas] | $r_tampil_siswa[SwNoHp]</option>";
+                          echo"<option value='$r_tampil_siswa[SwKelas]'>$r_tampil_siswa[SwKelas] | $r_tampil_siswa[SwNoHp]</option>";
                         }
                       ?>
                     </select>

@@ -117,6 +117,7 @@ include'config.php';
                             WHERE transaksi.status = 'Pinjam'
                             ORDER BY transaksi.IdTransaksi DESC 
                             LIMIT $posisi, $batas"; 
+                            // $query = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'";
                         $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'"; 
                         $no = $posisi * 1; 
                 }
@@ -141,10 +142,10 @@ include'config.php';
                 <td><?php echo $r_tampil_transaksi['TglKembali']; ?></td> 
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>
                 <td>
-                   
+                    <a href="transaksi-peminjaman-detail.php?IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
+					<a href="transaksi-peminjaman-delete.php?IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                     <div class="tombol-opsi-container"><a href="transaksi-pengembalian-proses.php?&IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>&IdBarang=<?php echo $r_tampil_transaksi['IdBarang']; ?>&TglKembali=<?php echo $r_tampil_transaksi['TglKembali']; ?>
                     &BrgNama=<?php echo $r_tampil_transaksi['BrgNama']; ?>&SwKelas=<?php echo $r_tampil_transaksi['SwKelas']; ?>" onclick = "return confirm ('Apakah Anda Yakin ingin mengembalikan Barang ini ?')" class="btn btn-danger">Kembalikan</a></div>
-					
                 </td>
             </tr>
             <?php 

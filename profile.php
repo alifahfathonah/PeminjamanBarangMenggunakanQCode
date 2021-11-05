@@ -47,99 +47,62 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4">
-
-            <!-- Profile Image -->
-            <div class="card card-primary card-outline">
-              <div class="card-body box-profile">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
-                       src="img/admin.png"
-                       alt="User profile picture">
-                </div>
-
-                <h3 class="profile-username text-center"><?php echo $row['nama']; ?></h3>
-
-                <p class="text-muted text-center"><?php echo $row['jabatan']; ?></p>
-
-                <ul class="list-group list-group-unbordered mb-3">
-                  <li class="list-group-item">
-                    <b>Username</b> <a class="float-right"> <?php echo $row['username']; ?></a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Email</b> <a class="float-right"> <?php echo $row['email']; ?></a>
-                  </li>
-                </ul>
-
-                
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
-            
-            <!-- /.card -->
-          </div>
+         
           <!-- /.col -->
-          <div class="col-md-8">
+          <div class="col-md-12">
             <!-- About Me Box -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Profile</h3>
+              <h1 class="card-title" > Profile</h1>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              
-              <div class="form-group ">
-                <i class="fas fa-user"></i>
-                <label>Username</label>
-                <input type="text" placeholder="Username" name="Username" value="" class="form-control" required>
-              </div>
-              <div class="form-group ">
-                <i class="fas fa-envelope"></i>
-                <label>Email</label>
-                <input type="text" placeholder="Email" name="Email" value="" class="form-control" required>
-              </div>
-              <div class="form-group ">
-                <!-- <i class="fas fa-user"></i> -->
-                <label>Nama</label>
-                <input type="text" placeholder="Nama" name="nama" value="" class="form-control" required>
-              </div>
-              <div class="form-group ">
-                <!-- <i class="fas fa-user"></i> -->
-                <label>Jabatan</label>
-                <input type="text" placeholder="Jabatan" name="Jabatan" value="" class="form-control" required>
-              </div>
-              <div class="form-group ">
-                <i class="fas fa-lock"></i>
-                <label>Password </label>
-                 <input type="password" placeholder="Password" name="password" value=""  class="form-control"required>
-              </div>
-              <div class="form-group ">
-                <i class="fas fa-lock"></i>
-                <label>Confirm Password</label>
-                 <input type="password" placeholder="Confirm Password" name="password" value=""  class="form-control"required>
-              </div>
-              <div class="form-group">
-                    <label for="exampleInputFile">Foto</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+              <div class="x_content">
+                    <div class="col-md-12">
+                   
+                      <div class="profile_img">
+                        <div id="crop-avatar">
+                          <!-- Current avatar -->
+                          <img  src="img/<?php echo $row['foto']; ?>"  alt="User profile picture" style="width:300px;height:300px;">
+                        </div>
                       </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
+                      <!--  -->
                     </div>
+                    <br></br>
+                    <div class="col-md-12">
+                      <div class="profile_title">
+                      </div>
+                      <div class="x_content">
+                    </div>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <td>Nama</td>
+                          <td><?php echo $row['nama']; ?></td>
+                        </tr>
+                        <tr>
+                          <td>Jabatan</td>
+                          <td><?php echo $row['jabatan']; ?></td>
+                        </tr>
+                        <tr>
+                          <td>Username</td>
+                          <td><?php echo $row['username']; ?></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><?php echo $row['email']; ?></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+
                   </div>
-                  
-                      <button type="button" class="btn btn-block bg-gradient-primary">Save</button>
-                      <button type="button" class="btn btn-block bg-gradient-danger">Cancel</button>
+             
+                  <a href="editprofile.php"><button type="button" class="btn btn-primary"><i class="fa fa-edit m-right-xs"></i> Edit Profil</button></a>
+                      <br />
                     
               </div>
               <!-- /.card-body -->
@@ -152,6 +115,8 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+
   </div>
   <!-- /.content-wrapper -->
   <!-- <footer class="main-footer">

@@ -138,7 +138,6 @@ include'config.php';
 				<td><?php echo $r_tampil_transaksi['SwKelas']; ?></td>
                 <td><?php echo $r_tampil_transaksi['BrgNama']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglPinjam']; ?></td>
-                <td><?php echo $r_tampil_transaksi['TglKembali']; ?></td> 
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>
                 <td>
                     <a href="transaksi-peminjaman-detail.php?IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>

@@ -70,11 +70,6 @@ include'config.php';
                     <input type="hidden" name="TglPinjam" value="<?php echo $r_tampil_transaksi['TglPinjam']; ?> " class="form-control">
                   </div>
                   <div class="form-group ">
-                    <label>Tanggal Kembali</label>
-                    <input type="text" disabled="" value="<?php echo $r_tampil_transaksi['TglKembali']; ?>  " class="form-control">
-                    <input type="hidden" name="TglKembali" value="<?php echo $r_tampil_transaksi['TglKembali']; ?> " class="form-control">
-                  </div>
-                  <div class="form-group ">
                     <label>Status</label>
                     <input type="text" disabled="" value="<?php echo $r_tampil_transaksi['status']; ?>  " class="form-control">
                     <input type="hidden" name="status" value="<?php echo $r_tampil_transaksi['status']; ?> " class="form-control">

@@ -119,6 +119,7 @@ include'config.php';
                 <td>
                     <a href="barang-detail.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
                     <a href="barang-edit.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
+                    <a href="generate-qr.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-qrcode" title="QrCode">&#xE254;</i></a>
 					<a href="barang-delete.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                 </td>
             </tr>

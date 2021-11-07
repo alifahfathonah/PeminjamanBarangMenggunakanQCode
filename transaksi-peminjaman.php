@@ -61,7 +61,6 @@ include'config.php';
                     <th>Kelas</th>
                     <th>Nama Barang</th>
                     <th>Tanggal Pinjam</th>
-                    <th>Tanggal Kembali</th>
                     <th>Status </th>
                     <th>Aksi</th>
                 </tr>

@@ -9,12 +9,11 @@
     $TglPinjam = $_GET['TglPinjam'];
     $tgl = date('Y-m-d'); 
 
-    mysqli_query($conn,"UPDATE transaksi SET status='Kembali', TglKembali='$tgl' WHERE IdTransaksi ='$IdTransaksi'"); 
-    // mysqli_query($conn,"UPDATE barang SET jmlbuku=(jmlbuku+1) where judul ='$judul'"); 
-    // mysqli_query($conn,"UPDATE siswa SET status='Tidak Meminjam' where nama ='$nama'"); 
+    mysqli_query($conn,"UPDATE transaksi SET status='Kembali', TglKembali='$tgl' WHERE IdTransaksi ='$IdTransaksi'");
  
+    header("location: transaksi-pengembalian.php");
 ?> 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	alert("Proses Pengembalian Buku Berhasil");
     window.location.href = "transaksi-peminjaman.php";
-</script>
+</script> -->

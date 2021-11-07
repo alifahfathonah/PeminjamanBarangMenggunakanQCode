@@ -33,11 +33,24 @@ include'config.php';
                   <!-- Kolom Satu -->
                   <div class="form-group ">
                     <label>ID Siswa</label>
-                    <input type="text" name="IdSiswa" placeholder="ID Siswa" class="form-control">
+                    <input type="text" name="IdSiswa" required="required" 
+                      value="<?php //membuat IdSiswa otomatis
+                      $query = mysqli_query($conn, "SELECT max(IdSiswa) as kodeTerbesar FROM siswa");
+                      $data = mysqli_fetch_array($query);
+                      $kodeSiswa = $data['kodeTerbesar'];
+
+                      $urutan = (int) substr($kodeSiswa, 3, 3);
+                      $urutan++;
+
+                      $huruf = "SW";
+                      $kodeSiswa = $huruf . sprintf("%03s", $urutan);
+                      echo $kodeSiswa;
+                      ?>" readonly class="form-control">
                   </div>
+
                   <div class="form-group">
-                    <label>Nama Siswa</label>
-                    <input type="text" name="SwNama" placeholder="Nama Siswa" class="form-control">
+                    <label>Nama Ketua Kelas</label>
+                    <input type="text" name="SwNama" placeholder="Nama Ketua Kelas" class="form-control">
                   </div>
                   
                   <!-- Kolom Dua -->

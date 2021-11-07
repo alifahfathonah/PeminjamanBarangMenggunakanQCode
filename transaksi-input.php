@@ -33,7 +33,20 @@ include'config.php';
                   <!-- Kolom Satu -->
                   <div class="form-group ">
                     <label>ID Transaksi</label>
-                    <input type="text" name="IdTransaksi" placeholder="ID Transaksi" class="form-control">
+                    <input type="text" name="IdTransaksi" required="required" 
+                      value="<?php //membuat IdSiswa otomatis
+                      $query = mysqli_query($conn, "SELECT max(IdTransaksi) as kodeTerbesar FROM transaksi");
+                      $data = mysqli_fetch_array($query);
+                      $kodeTransaksi = $data['kodeTerbesar'];
+
+                      $urutan = (int) substr($kodeTransaksi, 3, 3);
+                      $urutan++;
+
+                      $huruf = "TR";
+                      $kodeTransaksi = $huruf . sprintf("%03s", $urutan);
+                      echo $kodeTransaksi;
+                      ?>" readonly class="form-control">
+
                   </div>
                   <div class="form-group ">
                     <label>ID Barang</label>
@@ -102,14 +115,11 @@ include'config.php';
                     <input type="date" name="TglPinjam" value="<?php echo $tgl; ?>" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label>Tanggal Kembali</label>
-                    <input type="date" name="TglKembali" value="<?php echo $tgl; ?>" class="form-control">
-                  </div>
-                  <div class="form-group">
                     <label>Status</label>
                     <input type="text" name="status" placeholder="Status" class="form-control">
                   </div>
                   <div class="col-12">
+                    <a href="scan.php" class="btn btn-success">Scan</a>
                     <a href="transaksi-peminjaman.php" class="btn btn-danger float-right">Batal</a>
                     <input type="submit" value="Simpan" class="btn btn-primary float-right">
                   </div>

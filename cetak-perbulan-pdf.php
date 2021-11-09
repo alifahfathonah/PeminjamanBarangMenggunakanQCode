@@ -22,7 +22,10 @@
                 </thead>
                 <tbody>';
     $nomor = 1; 
-    $query = "select * from transaksi"; 
+    $query = "select transaksi.*, barang.IdBarang, siswa.SwKelas, barang.BrgNama from transaksi 
+    INNER JOIN barang ON barang.IdBarang = transaksi.IdBarang 
+    INNER JOIN siswa ON siswa.SwKelas = transaksi.SwKelas 
+    and transaksi.TglPinjam LIKE '%$_GET[bln_ini]%'";
     $q_tampil_laporan = mysqli_query($conn, $query); 
 
     if(mysqli_num_rows($q_tampil_laporan) > 0) { 
@@ -54,6 +57,6 @@
     $dompdf->loadHtml($html);                       // isi konten (format HTML) untuk dokumen pdf
     $dompdf->setPaper('a4','landscape');            // set ukuran dan orientasi dokumen pdf
     $dompdf->render();                              // vender kode HTML menjadi pdf
-    $dompdf->stream('data_Laporan_Transaksi_Peminjaman_Barang.pdf'); // stream pdf ke browser
+    $dompdf->stream('Data_Laporan_Bulanan_Transaksi_Peminjaman_Barang.pdf'); // stream pdf ke browser
 ?>       
     

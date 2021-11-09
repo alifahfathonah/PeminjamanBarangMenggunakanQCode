@@ -42,6 +42,8 @@ include'config.php';
                                             <td>-Pilih Bulan-</td><td><input type="month" name="bln_ini" value="<?php echo $bln_ini; ?>"></td>
                                             <td><button type="submit" name="cari" class="btn btn-danger">Cari</td>
                                             <td><a href="cetak-perbulan.php?module=cetakperbulan&bln_ini=<?php echo $_POST['bln_ini'];?>" class="btn btn-success">Cetak</a></td>
+                                          <td><a target="_blank" href="cetak-perbulan-pdf.php?module=cetakpebulan&bln_ini=<?php echo $_POST['bln_ini'];?>"><img src="img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          <td><a target="_blank" href="cetak-perbulan-excel.php?module=cetakperbulan&bln_ini=<?php echo $_POST['bln_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
                                             </tr>
                                         </form>
                                               <tr>

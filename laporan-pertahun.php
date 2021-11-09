@@ -39,6 +39,8 @@ include'config.php';
                                           <td>-Pilih Tahun-</td><td><input type="year" name="thn_ini" value="<?php echo $thn_ini; ?>"></td>
                                           <td><button type="submit" name="cari" class="btn btn-danger">Cari</td>
                                           <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>" class="btn btn-success">Cetak</a></td>
+                                          <td><a target="_blank" href="cetak-pertahun-pdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
                                           </tr>
                                           </form>
                                               <tr>

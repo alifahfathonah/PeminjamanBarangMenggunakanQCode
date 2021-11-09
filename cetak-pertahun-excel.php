@@ -21,7 +21,11 @@ $sheet->setCellValue('H3', 'Tanggal Kembali');
 $sheet->setCellValue('I3', 'Status');
 
  
-$query = mysqli_query($conn,"select * from transaksi");	//mengambil data table tbbuku dari db
+$query = mysqli_query($conn,
+                    "select transaksi.*, barang.IdBarang, siswa.SwKelas, barang.BrgNama from transaksi 
+                    INNER JOIN barang ON barang.IdBarang = transaksi.IdBarang 
+                    INNER JOIN siswa ON siswa.SwKelas = transaksi.SwKelas 
+                    and transaksi.TglPinjam LIKE '%$_GET[thn_ini]%'");	
 $i = 2;	//index yg akan digunakan untuk mengisi pertama kali
 $no = 1;	//memberi nomor urut data
 
@@ -54,9 +58,9 @@ $styleArray = [
 $i = $i - 1;
 //hasil array di Line 26 yaitu $styleArray yang berisi settingan border,
 //agar digunakan dari Cell A1 hingga kolom F
-$sheet->getStyle('A1:G'.$i)->applyFromArray($styleArray);
+$sheet->getStyle('A1:I'.$i)->applyFromArray($styleArray);
  
-$filename = 'Data-Peminjaman-Barang.xlsx';
+$filename = 'Data-Laporan-Tahunan-Transaksi-Peminjaman-Barang.xlsx';
 ob_end_clean();     //untuk mengatasi excel cannot open the file format or file extension
 
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

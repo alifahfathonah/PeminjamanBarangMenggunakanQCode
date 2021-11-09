@@ -76,7 +76,7 @@ include'config.php';
                 }
 
                 if($_SERVER['REQUEST_METHOD'] == "POST") { 
-                    $pencarian = trim(mysqli_real_escape_string($db, $_POST['pencarian'])); 
+                    $pencarian = trim(mysqli_real_escape_string($conn, $_POST['pencarian'])); 
                     if($pencarian != "") { 
                         $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
@@ -151,7 +151,7 @@ include'config.php';
     if(isset($_POST['pencarian'])) { 
         if($_POST['pencarian']!='') { 
             echo "<div style=\"float:left;\">"; 
-            $jml = mysqli_num_rows(mysqli_query($db, $queryJml)); 
+            $jml = mysqli_num_rows(mysqli_query($conn, $queryJml)); 
             echo "Data Hasil Pencarian: <b>$jml</b>"; 
             echo "</div>"; 
         }

@@ -61,7 +61,7 @@
         </a>
       </li>
       <li class="nav-item has-treeview">
-        <a href="laporan.php" class="nav-link">
+        <a href="laporan-transaksi.php" class="nav-link">
           <i class="nav-icon fas fa-file-alt"></i>
           <p>
           Laporan

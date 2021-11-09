@@ -48,5 +48,30 @@
       </div>
     </form> -->
     
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      
+      <!-- Notifications Dropdown Menu -->
+     
+      <li class="nav-item">
+      <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="img/admn.jpg" alt="user" class="rounded-circle" width="40">
+                                 <span
+                                        class="text-dark"> <?php echo$_SESSION['username']; ?></span> <i data-feather="chevron-down"
+                                        class="svg-icon"></i></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="logout.php"><i data-feather="power"
+                                        class="svg-icon mr-2 ml-1"></i>
+                                    Logout</a>
+                                <div class="dropdown-divider"></div>
+                                
+                            </div>
+      </li>
+    </ul>
   </nav>
   <!-- /.navbar -->
+    

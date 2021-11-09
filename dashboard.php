@@ -18,7 +18,7 @@ include'config.php';
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-dark">Sistem Informasi Peminjaman Barang SMK Negeri 1 Turen</h1>
+          <center><h1 class="m-0 text-dark"><b>Sistem Informasi Peminjaman Barang SMK Negeri 1 Turen</b></h1></center>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->

@@ -60,6 +60,7 @@ include'config.php';
                     <th>Merk</th>
                     <th>Spesifikasi</th>
                     <th>Kondisi</th>
+                    <th>Jumlah Barang</th>
                     <th>Aksi</th>
                 </tr>
                 </thead>
@@ -116,6 +117,7 @@ include'config.php';
                 <td><?php echo $r_tampil_barang['BrgMerk']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgSpesifikasi']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgKondisi']; ?></td>
+                <td><?php echo $r_tampil_barang['BrgJumlah']; ?></td>
                 <td>
                     <a href="barang-detail.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
                     <a href="barang-edit.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>

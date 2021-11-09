@@ -55,6 +55,10 @@ include'config.php';
                     <label>Kondisi Barang</label>
                     <input type="text" name="BrgKondisi" placeholder="Kondisi Barang" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label>Jumlah Barang</label>
+                    <input type="text" name="BrgJumlah" placeholder="Jumlah Barang" class="form-control">
+                  </div>
                   <div class="col-12">
                     <a href="barang.php" class="btn btn-danger float-right">Batal</a>
                     <input type="submit" value="Simpan" class="btn btn-primary float-right">

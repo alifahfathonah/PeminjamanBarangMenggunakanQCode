@@ -8,9 +8,10 @@
     $BrgMerk = $_POST['BrgMerk']; 
     $BrgSpesifikasi = $_POST['BrgSpesifikasi'];
     $BrgKondisi = $_POST['BrgKondisi'];
+    $BrgJumlah = $_POST['BrgJumlah'];
 
     //melakukan input
-    $sql = "INSERT INTO barang VALUES('$IdBarang','$BrgNama','$BrgMerk','$BrgSpesifikasi','$BrgKondisi')"; 
+    $sql = "INSERT INTO barang VALUES('$IdBarang','$BrgNama','$BrgMerk','$BrgSpesifikasi','$BrgKondisi','$BrgJumlah')"; 
     $query = mysqli_query($conn, $sql); 
 
     //kembali ke halaman sebelumnya

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2021 at 05:53 AM
+-- Generation Time: Nov 09, 2021 at 07:43 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -32,18 +32,23 @@ CREATE TABLE `barang` (
   `BrgNama` varchar(50) NOT NULL,
   `BrgMerk` varchar(50) NOT NULL,
   `BrgSpesifikasi` varchar(255) NOT NULL,
-  `BrgKondisi` varchar(255) NOT NULL
+  `BrgKondisi` varchar(255) NOT NULL,
+  `BrgJumlah` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`IdBarang`, `BrgNama`, `BrgMerk`, `BrgSpesifikasi`, `BrgKondisi`) VALUES
-('B271021', 'LCD', 'Epson', 'Warna putih', 'Baik'),
-('B271022', 'Kabel HDMI', 'Sony High', 'Panjang 3 meter', 'Baik'),
-('B271023', 'Keyboard', 'Rexus', 'Warna Hitam', 'tombol f11 hilang'),
-('B271024', 'Speaker', 'JBL', 'Warna Hitam', 'Baik');
+INSERT INTO `barang` (`IdBarang`, `BrgNama`, `BrgMerk`, `BrgSpesifikasi`, `BrgKondisi`, `BrgJumlah`) VALUES
+('03.06.001', 'Headset', 'Xiaomi', 'Warna Abu', 'Baik', 4),
+('03.06.002', 'Kabel HDMI', 'Sony High Speed', 'Warna Hitam, panjang 30 cm', 'Baik', 9),
+('03.06.003', 'Kabel Keler', 'Krisbow', 'Panjang 1 meter', 'Baik', 19),
+('03.06.004', 'Kunci Cadangan Gedung', '', 'Warna silver', 'Baik', 30),
+('03.06.005', 'Laptop', 'ASUS', 'Warna hitam', 'Baik', 3),
+('03.06.006', 'LCD Proyektor', 'Epson', 'Warna Putih', 'Baik', 14),
+('03.06.007', 'Mouse', 'M-tech', 'Warna Abu', 'Baik', 5),
+('03.06.008', 'Sound', 'JBL', 'Warna Hitam', 'Baik', 6);
 
 -- --------------------------------------------------------
 
@@ -63,10 +68,9 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`IdSiswa`, `SwNama`, `SwKelas`, `SwNoHp`) VALUES
-('S001', 'Tria', 'X TKJ 2', '081234567890'),
-('S002', 'Riris', 'X RPL 1', '081098765432'),
-('S003', 'Siti', 'XII TKJ 2', '088888888888'),
-('S004', 'Toni', 'X TKR 1', '081111111111');
+('SW001', 'Tria', 'X TKJ 1', '081234567890'),
+('SW002', 'Riris', 'X TKJ 2', '088123456789'),
+('SW003', 'Siti', 'X RPL 1', '088888888888');
 
 -- --------------------------------------------------------
 
@@ -90,11 +94,10 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`IdTransaksi`, `IdBarang`, `Nama`, `SwKelas`, `BrgNama`, `TglPinjam`, `TglKembali`, `status`) VALUES
-('TR001', 'B271021', 'Tria', 'X TKJ 2', 'LCD', '2021-11-01', '2021-11-05', 'Kembali'),
-('TR002', 'B271022', 'Riris', 'X RPL 1', 'Kabel HDMI', '2021-11-01', '0000-00-00', 'pinjam'),
-('TR003', 'B271024', 'putra', 'XII TKJ 2', 'Speaker', '2021-11-05', '2021-11-05', 'Kembali'),
-('TR004', 'B271022', 'Putri', 'X TKJ 2', 'Kabel', '2021-11-05', '0000-00-00', 'pinjam'),
-('TR005', 'B271021', 'Bagus', 'X TKR 1', 'LCD', '2021-11-05', '0000-00-00', 'pinjam');
+('TR001', 'B271021', 'Putri', 'X TKJ 1', 'LCD', '2021-11-07', '2021-11-07', 'Kembali'),
+('TR002', 'B271022', 'putra', 'X TKJ 2', 'Kabel', '2021-11-07', '2021-11-07', 'Kembali'),
+('TR003', 'B271024', 'caca', 'X RPL 1', 'Speaker', '2021-11-07', '2021-11-07', 'Kembali'),
+('TR004', 'B271023', 'Bagus', 'X RPL 1', 'Keyboard', '2021-11-07', '0000-00-00', 'pinjam');
 
 -- --------------------------------------------------------
 

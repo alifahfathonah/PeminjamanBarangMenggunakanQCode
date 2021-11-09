@@ -60,6 +60,10 @@
                     <label>Kondisi Barang</label>
                     <input type="text" name="BrgKondisi" value="<?php echo $r_tampil_barang['BrgKondisi']; ?>" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label>Jumlah Barang</label>
+                    <input type="text" name="BrgJumlah" value="<?php echo $r_tampil_barang['BrgJumlah']; ?>" class="form-control">
+                  </div>
                   <div class="col-12">
                     <a href="barang.php" class="btn btn-danger float-right">Batal</a>
                     <input type="submit" name="simpan" value="Simpan" id="tombol-simpan" class="btn btn-primary float-right"> 

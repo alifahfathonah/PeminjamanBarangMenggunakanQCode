@@ -64,6 +64,11 @@
                     <input type="text" disabled="" value="<?php echo $r_tampil_barang['BrgKondisi']; ?>" class="form-control">
                     <input type="hidden" name="BrgKondisi" value="<?php echo $r_tampil_barang['BrgKondisi']; ?>" class="form-control">
                   </div>
+                  <div class="form-group">
+                    <label>Jumlah Barang</label>
+                    <input type="text" disabled="" value="<?php echo $r_tampil_barang['BrgJumlah']; ?>" class="form-control">
+                    <input type="hidden" name="BrgJumlah" value="<?php echo $r_tampil_barang['BrgJumlah']; ?>" class="form-control">
+                  </div>
                   <div class="col-12">
                     <a href="barang.php" class="btn btn-success float-right">Kembali</a>
                 </div>

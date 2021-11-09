@@ -60,11 +60,27 @@
           </p>
         </a>
       </li>
+      <li class="nav-item has-treeview menu-open">
+        <a href="#" class="nav-link active">
+          <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
+          <p>
+            Laporan
+          </p>
+        </a>
+      </li>
       <li class="nav-item has-treeview">
-        <a href="laporan-transaksi.php" class="nav-link">
+        <a href="laporan-perbulan.php" class="nav-link">
           <i class="nav-icon fas fa-file-alt"></i>
           <p>
-          Laporan
+          Laporan Bulanan
+          </p>
+        </a>
+      </li>
+      <li class="nav-item has-treeview">
+        <a href="laporan-pertahun.php" class="nav-link">
+          <i class="nav-icon fas fa-file-alt"></i>
+          <p>
+          Laporan Tahunan
           </p>
         </a>
       </li>

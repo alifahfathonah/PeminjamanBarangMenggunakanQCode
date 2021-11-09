@@ -46,12 +46,6 @@ include'config.php';
 
       <div class="row">
       <div class="mb-2">
-                      <!-- <tr>
-<form method="POST" action="">
-<td><b>-Pilih Tanggal-</b></td><td><input type="date" name="hari_ini"></td>
-<td>-</td>
-<td><button type="submit" name="cari" class="btn btn-primary float-right">Cari</td> 
-</tr> -->
         <a target="_blank" href="cetak_laporan.php"><img src="img/print.png" height="50px" height="50px"></a>&nbsp;
         <a target="_blank" href="ekspor_pdf_laporan.php"><img src="img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;
         <a target="_blank" href="ekspor_excel_laporan.php"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;
@@ -95,8 +89,8 @@ include'config.php';
                 <td><?php echo $nomor; ?></td>
                 <td><?php echo $r_tampil_transaksi['IdTransaksi']; ?></td> 
                 <td><?php echo $r_tampil_transaksi['IdBarang']; ?></td>
-				<td><?php echo $r_tampil_transaksi['Nama']; ?></td>
-				<td><?php echo $r_tampil_transaksi['SwKelas']; ?></td>
+                <td><?php echo $r_tampil_transaksi['Nama']; ?></td>
+                <td><?php echo $r_tampil_transaksi['SwKelas']; ?></td>
                 <td><?php echo $r_tampil_transaksi['BrgNama']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglPinjam']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglKembali']; ?></td>

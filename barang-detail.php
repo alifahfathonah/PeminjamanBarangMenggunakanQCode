@@ -71,7 +71,7 @@
                   </div>
                   <div class="col-12">
                     <a href="barang.php" class="btn btn-success float-right">Kembali</a>
-                </div>
+                  </div>
                 </div>
                 </div>            
     </form>

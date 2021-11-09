@@ -1,10 +1,6 @@
 <?php 
     session_start();
     include'config.php';
-    // $IdUser = $_GET['IdUser']; 
-    // $q_tampil_user = mysqli_query($conn,"SELECT * FROM users WHERE IdUser = '$IdUser'"); 
-    // $r_tampil_user = mysqli_fetch_array($q_tampil_user); 
-
 ?> 
 
 <!DOCTYPE html>
@@ -62,17 +58,6 @@
               <div class="card-body">
               <div class="x_content">
                     <div class="col-md-12">
-                   
-                      <div class="profile_img">
-                        <div id="crop-avatar">
-                          <!-- Current avatar -->
-                          <img  src="img/<?php echo $row['foto']; ?>"  alt="User profile picture" style="width:300px;height:300px;">
-                        </div>
-                      </div>
-                      <!--  -->
-                    </div>
-                    <br></br>
-                    <div class="col-md-12">
                       <div class="profile_title">
                       </div>
                       <div class="x_content">
@@ -97,14 +82,9 @@
                         </tr>
                       </tbody>
                     </table>
-                    
-
                   </div>
-             
-                  <a href="editprofile.php"><button type="button" class="btn btn-primary"><i class="fa fa-edit m-right-xs"></i> Edit Profil</button></a>
-                      <br />
-                    
-              </div>
+                      <a href="dashboard.php" class="btn btn-success float-right">Kembali</a>
+                  </div>
               <!-- /.card-body -->
             </div>
             <!-- /.nav-tabs-custom -->
@@ -115,17 +95,7 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-
-
   </div>
-  <!-- /.content-wrapper -->
-  <!-- <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.4
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer> -->
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

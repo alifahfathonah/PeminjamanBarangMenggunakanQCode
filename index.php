@@ -52,7 +52,7 @@
           <h1 class="title">Welcome Back!</h1>
           <h2 class="title">Login</h2>
           <div class="input-field">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
           </div>
           <div class="input-field">

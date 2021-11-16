@@ -6,8 +6,12 @@ include'config.php';
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" rel="stylesheet" />
 <?php include 'template/header.php';?>
+</head>
+
 <?php include 'template/sidebar.php';?>
  <!-- sidebar -->
 
@@ -42,25 +46,20 @@ include'config.php';
                       $urutan = (int) substr($kodeTransaksi, 3, 3);
                       $urutan++;
 
-                      $huruf = "TR-";
+                      $huruf = "TR.";
                       $waktu = date('dmy');
-                      $kodeTransaksi = $huruf . $waktu . sprintf("-%03s", $urutan);
+                      $kodeTransaksi = $huruf . $waktu . sprintf(".%03s", $urutan);
                       echo $kodeTransaksi;
                       ?>" readonly class="form-control">
 
                   </div>
                   <div class="form-group ">
                     <label>ID Barang</label>
-                    <select name="IdBarang" class="form-control">
+                    <select id = "search" name="IdBarang" class="form-control">
 					          <option value="" select="selected">Pilih ID Barang</option>
                       <?php
-                        $query = "SELECT * FROM barang
-                            
-                            ORDER BY IdBarang";
-
-                        //$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
+                        $query = "SELECT * FROM barang ORDER BY IdBarang";
                         $q_tampil_barang = mysqli_query($conn, $query); 
-
                         while($r_tampil_barang=mysqli_fetch_array($q_tampil_barang)) {
                           echo"<option value=$r_tampil_barang[IdBarang]>$r_tampil_barang[IdBarang] | $r_tampil_barang[BrgNama]</option>";
                         }
@@ -98,11 +97,7 @@ include'config.php';
                     <select name="BrgNama" class="form-control">
 					          <option value="" select="selected">Pilih Nama Barang</option>
                         <?php
-                          $query = "SELECT * FROM barang
-                              
-                              ORDER BY IdBarang";
-
-                          //$sql="SELECT * FROM tbanggota ORDER BY idanggota DESC"; 
+                          $query = "SELECT * FROM barang ORDER BY IdBarang";
                           $q_tampil_barang = mysqli_query($conn, $query); 
 
                           while($r_tampil_barang=mysqli_fetch_array($q_tampil_barang)) {
@@ -128,9 +123,13 @@ include'config.php';
                 </div>
                 </div>
               </form>
+              <script>
+              $("#search").chosen();
+              </script>
 
     <!-- End Content -->
  <!-- fotter -->
  <?php include 'template/footer.php';?>
 </body>
+
 </html>

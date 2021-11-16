@@ -60,6 +60,7 @@ include'config.php';
                     <th>Nama Peminjam</th>
                     <th>Kelas</th>
                     <th>Nama Barang</th>
+                    <th>Qty</th>
                     <th>Tanggal Pinjam</th>
                     <th>Status </th>
                     <th>Aksi</th>
@@ -81,7 +82,7 @@ include'config.php';
                 if($_SERVER['REQUEST_METHOD'] == "POST") { 
                     $pencarian = trim(mysqli_real_escape_string($conn, $_POST['pencarian'])); 
                     if($pencarian != "") { 
-                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
+                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.qty, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                                 INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -97,7 +98,7 @@ include'config.php';
                         $queryJml = $sql; 
 
                     } else { 
-                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.TglPinjam, 
+                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.qty,transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                                 INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -109,7 +110,7 @@ include'config.php';
                     }
                 }
                 else { 
-                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,  transaksi.TglPinjam, 
+                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.qty, transaksi.TglPinjam, 
                             transaksi.TglKembali, transaksi.status FROM transaksi 
                             INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                             INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -137,13 +138,14 @@ include'config.php';
 				<td><?php echo $r_tampil_transaksi['Nama']; ?></td>
 				<td><?php echo $r_tampil_transaksi['SwKelas']; ?></td>
                 <td><?php echo $r_tampil_transaksi['BrgNama']; ?></td>
+                <td><?php echo $r_tampil_transaksi['qty']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglPinjam']; ?></td>
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>
                 <td>
                     <a href="transaksi-peminjaman-detail.php?IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
 					<a href="transaksi-peminjaman-delete.php?IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                     <div class="tombol-opsi-container"><a href="transaksi-pengembalian-proses.php?&IdTransaksi=<?php echo $r_tampil_transaksi['IdTransaksi'];?>&IdBarang=<?php echo $r_tampil_transaksi['IdBarang']; ?>&TglKembali=<?php echo $r_tampil_transaksi['TglKembali']; ?>
-                    &BrgNama=<?php echo $r_tampil_transaksi['BrgNama']; ?>&SwKelas=<?php echo $r_tampil_transaksi['SwKelas']; ?>" onclick = "return confirm ('Apakah Anda Yakin ingin mengembalikan Barang ini ?')" class="btn btn-danger">Kembalikan</a></div>
+                    &BrgNama=<?php echo $r_tampil_transaksi['BrgNama']; ?>&SwKelas=<?php echo $r_tampil_transaksi['SwKelas']; ?>&qty=<?php echo $r_tampil_transaksi['qty']; ?>" onclick = "return confirm ('Apakah Anda Yakin ingin mengembalikan Barang ini ?')" class="btn btn-danger">Kembalikan</a></div>
                 </td>
             </tr>
             <?php 

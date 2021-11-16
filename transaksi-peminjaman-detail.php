@@ -65,6 +65,11 @@ include'config.php';
                     <input type="hidden" name="BrgNama" value="<?php echo $r_tampil_transaksi['BrgNama']; ?> " class="form-control">
                   </div>
                   <div class="form-group ">
+                    <label>Qty</label>
+                    <input type="text" disabled="" value="<?php echo $r_tampil_transaksi['qty']; ?>  " class="form-control">
+                    <input type="hidden" name="qty" value="<?php echo $r_tampil_transaksi['qty']; ?> " class="form-control">
+                  </div>
+                  <div class="form-group ">
                     <label>Tanggal Peminjam</label>
                     <input type="text" disabled="" value="<?php echo $r_tampil_transaksi['TglPinjam']; ?>  " class="form-control">
                     <input type="hidden" name="TglPinjam" value="<?php echo $r_tampil_transaksi['TglPinjam']; ?> " class="form-control">

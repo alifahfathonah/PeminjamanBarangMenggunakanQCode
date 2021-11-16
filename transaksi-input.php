@@ -43,12 +43,12 @@ include'config.php';
                       $data = mysqli_fetch_array($query);
                       $kodeTransaksi = $data['kodeTerbesar'];
 
-                      $urutan = (int) substr($kodeTransaksi, 3, 3);
+                      $urutan = (int) substr($kodeTransaksi, 10, 3);
                       $urutan++;
 
                       $huruf = "TR.";
                       $waktu = date('dmy');
-                      $kodeTransaksi = $huruf . $waktu . sprintf(".%03s", $urutan);
+                      $kodeTransaksi = $huruf . $waktu . ".".$urutan;
                       echo $kodeTransaksi;
                       ?>" readonly class="form-control">
 
@@ -105,6 +105,10 @@ include'config.php';
                           }
                         ?>
 				            </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Qty</label>
+                    <input type="text" name="qty" placeholder="Jumlah Qty" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Tanggal Pinjam</label>

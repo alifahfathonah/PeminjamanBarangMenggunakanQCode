@@ -33,7 +33,20 @@ include'config.php';
                   <!-- Kolom Satu -->
                   <div class="form-group ">
                     <label>ID Barang</label>
-                    <input type="text" name="IdBarang" placeholder="ID Barang" class="form-control">
+                    <!-- <input type="text" name="IdBarang" placeholder="ID Barang" class="form-control"> -->
+                    <input type="text" name="IdBarang" required="required" 
+                      value="<?php //membuat IdBarang otomatis
+                      $query = mysqli_query($conn, "SELECT max(IdBarang) as kodeTerbesar FROM barang");
+                      $data = mysqli_fetch_array($query);
+                      $kodeBarang = $data['kodeTerbesar'];
+
+                      $urutan = (int) substr($kodeBarang, 6, 3);
+                      $urutan++;
+
+                      $huruf = "03.06.";
+                      $kodeBarang = $huruf . sprintf("%03s", $urutan);
+                      echo $kodeBarang;
+                      ?>" readonly class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Nama Barang</label>

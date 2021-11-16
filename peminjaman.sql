@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 07:43 AM
+-- Generation Time: Nov 09, 2021 at 03:25 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -70,7 +70,8 @@ CREATE TABLE `siswa` (
 INSERT INTO `siswa` (`IdSiswa`, `SwNama`, `SwKelas`, `SwNoHp`) VALUES
 ('SW001', 'Tria', 'X TKJ 1', '081234567890'),
 ('SW002', 'Riris', 'X TKJ 2', '088123456789'),
-('SW003', 'Siti', 'X RPL 1', '088888888888');
+('SW003', 'Siti', 'X RPL 1', '088888888888'),
+('SW004', 'Caca', 'X RPL 2', '089000000000');
 
 -- --------------------------------------------------------
 
@@ -94,10 +95,9 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`IdTransaksi`, `IdBarang`, `Nama`, `SwKelas`, `BrgNama`, `TglPinjam`, `TglKembali`, `status`) VALUES
-('TR001', 'B271021', 'Putri', 'X TKJ 1', 'LCD', '2021-11-07', '2021-11-07', 'Kembali'),
-('TR002', 'B271022', 'putra', 'X TKJ 2', 'Kabel', '2021-11-07', '2021-11-07', 'Kembali'),
-('TR003', 'B271024', 'caca', 'X RPL 1', 'Speaker', '2021-11-07', '2021-11-07', 'Kembali'),
-('TR004', 'B271023', 'Bagus', 'X RPL 1', 'Keyboard', '2021-11-07', '0000-00-00', 'pinjam');
+('TR001', '03.06.001', 'Putri', 'X TKJ 1', 'Headset', '2021-11-09', '2021-11-09', 'Kembali'),
+('TR002', '03.06.002', 'Bela', 'X TKJ 2', 'Kabel', '2021-11-09', '0000-00-00', 'pinjam'),
+('TR003', '03.06.003', 'putra', 'X RPL 1', 'Kabel', '2020-12-21', '0000-00-00', 'pinjam');
 
 -- --------------------------------------------------------
 
@@ -111,20 +111,15 @@ CREATE TABLE `users` (
   `jabatan` varchar(100) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`IdUser`, `nama`, `jabatan`, `username`, `email`, `password`, `foto`) VALUES
-(1, 'Rifatus', 'Staf Sarpras', 'adminstaf', 'staf@gmail.com', '25d55ad283aa400af464c76d713c07ad', ''),
-(3, '', '', 'silvia', 'silvi@gmail.com', '25d55ad283aa400af464c76d713c07ad', ''),
-(5, '', '', 'wakasarpras', 'waka@gmail.com', '25d55ad283aa400af464c76d713c07ad', ''),
-(6, '', '', 'riris', 'riris@gmail.com', '25d55ad283aa400af464c76d713c07ad', ''),
-(7, 'zahri silvia', '', 'zahri', 'zahri@gmail.com', '25d55ad283aa400af464c76d713c07ad', '');
+INSERT INTO `users` (`IdUser`, `nama`, `jabatan`, `username`, `email`, `password`) VALUES
+(1, 'Rifatus', 'Staf Sarpras', 'adminstaf', 'staf@gmail.com', '25d55ad283aa400af464c76d713c07ad');
 
 --
 -- Indexes for dumped tables

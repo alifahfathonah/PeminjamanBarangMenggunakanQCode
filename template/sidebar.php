@@ -44,7 +44,7 @@
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview">
+      <li class="nav-item">
         <a href="transaksi-peminjaman.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-list"></i>
           <p>
@@ -52,7 +52,7 @@
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview">
+      <li class="nav-item">
         <a href="transaksi-pengembalian.php" class="nav-link">
           <i class="nav-icon fas fa-clipboard-check"></i>
           <p>
@@ -62,13 +62,12 @@
       </li>
       <li class="nav-item has-treeview menu-open">
         <a href="#" class="nav-link active">
-          <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
           <p>
             Laporan
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview">
+      <li class="nav-item">
         <a href="laporan-perbulan.php" class="nav-link">
           <i class="nav-icon fas fa-file-alt"></i>
           <p>
@@ -76,7 +75,7 @@
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview">
+      <li class="nav-item">
         <a href="laporan-pertahun.php" class="nav-link">
           <i class="nav-icon fas fa-file-alt"></i>
           <p>
@@ -84,7 +83,7 @@
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview">
+      <li class="nav-item">
         <a href="logout.php" class="nav-link">
           <i class="nav-icon fas fa-sign-out-alt"></i>
           <p>
@@ -92,7 +91,6 @@
           </p>
         </a>
       </li>
-
     </ul>
   </nav>
   <!-- /.sidebar-menu -->

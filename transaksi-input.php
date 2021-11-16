@@ -42,8 +42,9 @@ include'config.php';
                       $urutan = (int) substr($kodeTransaksi, 3, 3);
                       $urutan++;
 
-                      $huruf = "TR";
-                      $kodeTransaksi = $huruf . sprintf("%03s", $urutan);
+                      $huruf = "TR-";
+                      $waktu = date('dmy');
+                      $kodeTransaksi = $huruf . $waktu . sprintf("-%03s", $urutan);
                       echo $kodeTransaksi;
                       ?>" readonly class="form-control">
 

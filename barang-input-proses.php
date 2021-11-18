@@ -5,13 +5,11 @@
     //memasukkan data ke array
     $IdBarang = $_POST['IdBarang']; 
     $BrgNama = $_POST['BrgNama']; 
-    $BrgMerk = $_POST['BrgMerk']; 
-    $BrgSpesifikasi = $_POST['BrgSpesifikasi'];
-    $BrgKondisi = $_POST['BrgKondisi'];
+    $BrgMerk = $_POST['BrgMerk'];
     $BrgJumlah = $_POST['BrgJumlah'];
 
     //melakukan input
-    $sql = "INSERT INTO barang VALUES('$IdBarang','$BrgNama','$BrgMerk','$BrgSpesifikasi','$BrgKondisi','$BrgJumlah')"; 
+    $sql = "INSERT INTO barang VALUES('$IdBarang','$BrgNama','$BrgMerk','$BrgJumlah')"; 
     $query = mysqli_query($conn, $sql); 
 
     //kembali ke halaman sebelumnya

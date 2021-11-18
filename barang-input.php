@@ -52,21 +52,13 @@ include'config.php';
                     <label>Nama Barang</label>
                     <input type="text" name="BrgNama" placeholder="Nama Barang" class="form-control">
                   </div>
-                  <div class="form-group">
-                    <label>Merk Barang</label>
-                    <input type="text" name="BrgMerk" placeholder="Merk Barang" class="form-control">
-                  </div>
-                  
+                                    
                   <!-- Kolom Dua -->
                   </div>
                   <div class="col-md-6">
                   <div class="form-group">
-                    <label>Spesifikasi Barang</label>
-                    <input type="text" name="BrgSpesifikasi" placeholder="Spesifikasi Barang" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label>Kondisi Barang</label>
-                    <input type="text" name="BrgKondisi" placeholder="Kondisi Barang" class="form-control">
+                    <label>Merk Barang</label>
+                    <input type="text" name="BrgMerk" placeholder="Merk Barang" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Jumlah Barang</label>

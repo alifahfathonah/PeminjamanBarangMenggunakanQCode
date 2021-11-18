@@ -1,87 +1,47 @@
 <?php
-session_start();// menjalankan sesion PHP 
-include'config.php';
-
-$IdBarang=$_GET['IdBarang'];
-$q_tampil_barang=mysqli_query($conn,"SELECT * FROM barang WHERE IdBarang='$IdBarang'");
-$r_tampil_barang=mysqli_fetch_array($q_tampil_barang);
+//library phpqrcode
+include "phpqrcode/qrlib.php";
+include 'config.php';
+ 
+//library mpdf
+//Jika download plugin mpdf tanpa composer (versi lama)
+// define('_MPDF_PATH','mpdf/');
+// include(_MPDF_PATH . "mpdf.php");
+// $mpdf=new mPDF('utf-8', 'A4', 11, 'Georgia');
+ 
+//Jika download plugin mpdf dengan composer (versi baru)
+require_once __DIR__ . '/vendor/autoload.php';
+$mpdf = new \Mpdf\Mpdf();
+ 
+//setting dan nama file pdf
+$nama_dokumen='qr-code-barang';
+ 
+ob_start();
 ?>
-
-<!DOCTYPE html>
 <html>
 <head>
-
-<?php include 'template/header.php';?>
-<?php include 'template/sidebar.php';?>
- <!-- sidebar -->
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <!-- <h1 class="m-0 text-dark">Laporan Data Transakasi</h1> -->
-          </div><!-- /.col -->
-          <div class="form-inline"> 
-            <div align="right"> 
-            <div class="form-inline"> 
-            <div align="right"> 
-                <form method=post> 
-                    <input type="text" name="pencarian" placeholder="Search">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                </form> 
-            </div> 
-        </div>
-            </div> 
-        </div>
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-    
-    
-    <br>
-    <!-- Main content -->
-    <section class="content">
-    <!-- <h1>Laporan Data Transakasi</h1> -->
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th>No</th>
-                    <th>ID Barang</th>
-                    <th>Nama Barang</th>
-                    <th>Merk</th>
-                    <th>Spesifikasi</th>
-                    <th>Kondisi</th>
-                    <th>Jumlah Barang</th>
-                    <th>QRCode</th>
-                </tr>
-                </thead>
-                <tbody> 
-            <?php
-            $nomor = 1; 
-            $query = "SELECT * FROM barang";
-            ?>
-            <tr>
-                <td><?php echo $no; ?></td>
-                <td><?php echo $r_tampil_barang['IdBarang']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgNama']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgMerk']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgSpesifikasi']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgKondisi']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgJumlah']; ?></td>
-            </tr>
-    </table> 
-    <script> 
-        window.print();
-    </script> 
-</div> 
+</head>
+<body>
+    <?php
+        $no = 1;
+        $query = "SELECT * FROM barang";
+        $arsip1 = $conn->prepare($query);
+        $arsip1->execute();
+        $res1 = $arsip1->get_result();
+        while ($row = $res1->fetch_assoc()) {
+            $IdBarang = $row['IdBarang'];
+            $namafile = $IdBarang.".png";
+    ?>
+        <img src="temp/<?php echo $namafile; ?>" width="100px">
+        <p><?php echo $IdBarang; ?></p>
+    <?php } ?>
+</body>
+</html>
+<?php
+mysqli_close($conn);
+$html = ob_get_contents();
+ob_end_clean();
+ 
+$mpdf->WriteHTML(utf8_encode($html));
+$mpdf->Output("".$nama_dokumen.".pdf" ,'D');
+?>

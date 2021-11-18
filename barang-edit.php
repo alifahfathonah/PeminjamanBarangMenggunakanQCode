@@ -44,21 +44,13 @@
                     <label>Nama Barang</label>
                     <input type="text" name="BrgNama" value="<?php echo $r_tampil_barang['BrgNama']; ?>" class="form-control">
                   </div>
-                  <div class="form-group">
-                    <label>Merk Barang</label>
-                    <input type="text" name="BrgMerk" value="<?php echo $r_tampil_barang['BrgMerk']; ?>" class="form-control">
-                  </div>
-                  
+                                    
                   <!-- Kolom Dua -->
                   </div>
                   <div class="col-md-6">
                   <div class="form-group">
-                    <label>Spesifikasi Barang</label>
-                    <input type="text" name="BrgSpesifikasi" value="<?php echo $r_tampil_barang['BrgSpesifikasi']; ?>" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label>Kondisi Barang</label>
-                    <input type="text" name="BrgKondisi" value="<?php echo $r_tampil_barang['BrgKondisi']; ?>" class="form-control">
+                    <label>Merk Barang</label>
+                    <input type="text" name="BrgMerk" value="<?php echo $r_tampil_barang['BrgMerk']; ?>" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Jumlah Barang</label>

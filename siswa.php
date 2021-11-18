@@ -41,6 +41,7 @@ include'config.php';
     
     <div class="col-sm-6">
         <a href="siswa-input.php" class="btn btn-success">Tambah Data</a>
+        <a href="download-pdf-qr-siswa.php" class="btn btn-primary">Download QR Code</a>
 	</div>
     
     <br>

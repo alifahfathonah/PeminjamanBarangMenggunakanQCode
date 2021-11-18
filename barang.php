@@ -41,6 +41,7 @@ include'config.php';
     
     <div class="col-12">
         <a href="barang-input.php" class="btn btn-success">Tambah Data</a>
+        <a href="download-pdf-qr-barang.php" class="btn btn-primary">Download QR Code</a>
     </div>
     
     <br>
@@ -58,8 +59,6 @@ include'config.php';
                     <th>ID Barang</th>
                     <th>Nama Barang</th>
                     <th>Merk</th>
-                    <th>Spesifikasi</th>
-                    <th>Kondisi</th>
                     <th>Jumlah Barang</th>
                     <th>Aksi</th>
                 </tr>
@@ -115,12 +114,7 @@ include'config.php';
                 <td><?php echo $r_tampil_barang['IdBarang']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgNama']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgMerk']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgSpesifikasi']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgKondisi']; ?></td>
-                <td>
-                    <?php echo $r_tampil_barang['BrgJumlah'];
-                        
-                    ?></td>
+                <td><?php echo $r_tampil_barang['BrgJumlah']; ?></td>
                 <td>
                     <a href="barang-detail.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
                     <a href="barang-edit.php?IdBarang=<?php echo $r_tampil_barang['IdBarang'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>

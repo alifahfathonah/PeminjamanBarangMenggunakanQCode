@@ -3,16 +3,14 @@
 
     $IdBarang = $_POST['IdBarang']; 
     $BrgNama = $_POST['BrgNama']; 
-    $BrgMerk = $_POST['BrgMerk']; 
-    $BrgSpesifikasi = $_POST['BrgSpesifikasi'];
-    $BrgKondisi = $_POST['BrgKondisi'];
+    $BrgMerk = $_POST['BrgMerk'];
     $BrgJumlah = $_POST['BrgJumlah'];
 
   if(isset($_POST['simpan'])) {
     extract($_POST);
     mysqli_query($conn,
       "UPDATE barang
-      SET IdBarang='$IdBarang', BrgNama='$BrgNama', BrgMerk='$BrgMerk', BrgSpesifikasi='$BrgSpesifikasi', BrgKondisi='$BrgKondisi', BrgJumlah='$BrgJumlah'
+      SET IdBarang='$IdBarang', BrgNama='$BrgNama', BrgMerk='$BrgMerk', BrgJumlah='$BrgJumlah'
       WHERE IdBarang = '$IdBarang'"
     );
     header("location: barang.php");

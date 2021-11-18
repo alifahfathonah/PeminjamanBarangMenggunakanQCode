@@ -30,19 +30,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-9">
-            <h1 class="m-0 text-dark"><b>Detail QR Code Siswa</b></h1>
+            <h1 class="m-0 text-dark"><b>Detail QR Code Ketua Kelas</b></h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
-    <div class="col-12">
-        <a href="download-pdf-qr-siswa.php" class="btn btn-success">Download</a>
-        <a href="siswa.php" class="btn btn-primary">Kembali</a>
-    </div>
-    
-    <br>
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -66,6 +60,8 @@
             $arsip1 = $conn->prepare($query);
             $arsip1->execute();
             $res1 = $arsip1->get_result();
+            // while ($row = $res1->fetch_assoc()) {
+            //     $IdBarang = $row['IdBarang'];
  
                 //Isi dari QRCode Saat discan
                 $isi_IdSiswa1 = $IdSiswa;
@@ -88,6 +84,10 @@
             </tr>
         </tbody>
     </table>
+        <br>
+        <div class="col-12">
+          <a href="siswa.php" class="btn btn-primary float-right">Kembali</a>
+        </div>
  
 </body>
 </html>

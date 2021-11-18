@@ -36,13 +36,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
-    <div class="col-12">
-        <a href="download-pdf-qr-barang.php" class="btn btn-success">Download</a>
-        <a href="barang.php" class="btn btn-primary">Kembali</a>
-    </div>
-    
-    <br>
+
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -94,6 +88,10 @@
             </tr>
         </tbody>
     </table>
+        <br>
+        <div class="col-12">
+          <a href="siswa.php" class="btn btn-primary float-right">Kembali</a>
+        </div>
  
 </body>
 </html>

@@ -72,7 +72,7 @@ include'config.php';
                   </div>
                   <div class="form-group">
                     <label>Kelas</label>
-                    <select name="SwKelas" class="form-control">
+                    <select id = "search1"name="SwKelas" class="form-control">
 					          <option value="" select="selected">Pilih Kelas</option>
                       <?php
                         $query = "SELECT * FROM siswa
@@ -94,7 +94,7 @@ include'config.php';
                   <div class="col-md-6">
                   <div class="form-group ">
                     <label>Nama Barang</label>
-                    <select name="BrgNama" class="form-control">
+                    <select id = "search2" name="BrgNama" class="form-control">
 					          <option value="" select="selected">Pilih Nama Barang</option>
                         <?php
                           $query = "SELECT * FROM barang ORDER BY IdBarang";
@@ -107,6 +107,10 @@ include'config.php';
 				            </select>
                   </div>
                   <div class="form-group">
+                    <label>Spesifikasi Barang</label>
+                    <input type="text" name="Spesifikasi" placeholder="Spesifikasi Barang" class="form-control">
+                  </div>
+                  <div class="form-group">
                     <label>Qty</label>
                     <input type="text" name="qty" placeholder="Jumlah Qty" class="form-control">
                   </div>
@@ -114,9 +118,17 @@ include'config.php';
                     <label>Tanggal Pinjam</label>
                     <input type="date" name="TglPinjam" value="<?php echo $tgl; ?>" class="form-control">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label>Status</label>
                     <input type="text" name="status" placeholder="Status" class="form-control">
+                  </div> -->
+                  <div class="form-group">
+                    <label>Status</label>
+                    <select  name="status" class="form-control">
+					          <option value="Pinjam">Pinjam</option>
+                    <option value="Kembali">Kembali</option>
+				            </select>
+                   
                   </div>
                   <div class="col-12">
                     <a href="scan.php" class="btn btn-success">Scan</a>
@@ -129,6 +141,8 @@ include'config.php';
               </form>
               <script>
               $("#search").chosen();
+              $("#search1").chosen();
+              $("#search2").chosen();
               </script>
 
     <!-- End Content -->

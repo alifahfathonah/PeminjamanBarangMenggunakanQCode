@@ -60,6 +60,7 @@ include'config.php';
                     <th>Nama Peminjam</th>
                     <th>Kelas</th>
                     <th>Nama Barang</th>
+                    <th>Spesifikasi Barang</th>
                     <th>Qty</th>
                     <th>Tanggal Pinjam</th>
                     <th>Status </th>
@@ -82,7 +83,7 @@ include'config.php';
                 if($_SERVER['REQUEST_METHOD'] == "POST") { 
                     $pencarian = trim(mysqli_real_escape_string($conn, $_POST['pencarian'])); 
                     if($pencarian != "") { 
-                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.qty, transaksi.TglPinjam, 
+                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty, transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                                 INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -98,7 +99,7 @@ include'config.php';
                         $queryJml = $sql; 
 
                     } else { 
-                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.qty,transaksi.TglPinjam, 
+                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty,transaksi.TglPinjam, 
                                 transaksi.TglKembali, transaksi.status FROM transaksi 
                                 INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                                 INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -110,7 +111,7 @@ include'config.php';
                     }
                 }
                 else { 
-                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas, transaksi.qty, transaksi.TglPinjam, 
+                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty, transaksi.TglPinjam, 
                             transaksi.TglKembali, transaksi.status FROM transaksi 
                             INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
                             INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
@@ -138,6 +139,7 @@ include'config.php';
 				<td><?php echo $r_tampil_transaksi['Nama']; ?></td>
 				<td><?php echo $r_tampil_transaksi['SwKelas']; ?></td>
                 <td><?php echo $r_tampil_transaksi['BrgNama']; ?></td>
+                <td><?php echo $r_tampil_transaksi['Spesifikasi']; ?></td>
                 <td><?php echo $r_tampil_transaksi['qty']; ?></td>
                 <td><?php echo $r_tampil_transaksi['TglPinjam']; ?></td>
                 <td><?php echo $r_tampil_transaksi['status']; ?></td>

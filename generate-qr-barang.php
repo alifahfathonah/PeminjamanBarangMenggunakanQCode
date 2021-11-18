@@ -50,8 +50,6 @@
                     <th>ID Barang</th>
                     <th>Nama Barang</th>
                     <th>Merk</th>
-                    <th>Spesifikasi</th>
-                    <th>Kondisi</th>
                     <th>Jumlah Barang</th>
                     <th>QRCode</th>
                 </thead>
@@ -81,8 +79,6 @@
                 <td><?php echo $r_tampil_barang['IdBarang']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgNama']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgMerk']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgSpesifikasi']; ?></td>
-                <td><?php echo $r_tampil_barang['BrgKondisi']; ?></td>
                 <td><?php echo $r_tampil_barang['BrgJumlah']; ?></td>
                 <td style="padding: 10px;"><img src="temp/<?php echo $namafile1; ?>" width="35px"></td>
             </tr>

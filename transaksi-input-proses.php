@@ -8,6 +8,7 @@
     $Nama = $_POST['Nama']; 
     $SwKelas = $_POST['SwKelas'];
     $BrgNama = $_POST['BrgNama'];
+    $Spesifikasi = $_POST['Spesifikasi'];
     $qty = $_POST['qty']; 
     $TglPinjam = $_POST['TglPinjam']; 
     $TglKembali = $_POST['TglKembali'];
@@ -33,7 +34,7 @@
     //proses    
     else{
         $insert = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
-            '$SwKelas','$BrgNama','$qty','$TglPinjam','$TglKembali','$status')");
+            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
             $pinjam = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='pinjam'");
             $kembali = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='kembali'");
             if($insert){

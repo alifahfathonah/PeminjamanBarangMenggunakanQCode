@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 05:34 AM
+-- Generation Time: Nov 19, 2021 at 02:33 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -32,8 +32,6 @@ CREATE TABLE `barang` (
   `IdBarang` varchar(15) NOT NULL,
   `BrgNama` varchar(50) NOT NULL,
   `BrgMerk` varchar(50) NOT NULL,
-  `BrgSpesifikasi` varchar(255) NOT NULL,
-  `BrgKondisi` varchar(255) NOT NULL,
   `BrgJumlah` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,15 +39,15 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`IdBarang`, `BrgNama`, `BrgMerk`, `BrgSpesifikasi`, `BrgKondisi`, `BrgJumlah`) VALUES
-('03.06.001', 'Headset', 'Xiaomi', 'Warna Abu', 'Baik', 10),
-('03.06.002', 'Kabel HDMI', 'Sony High Speed', 'Warna Hitam, panjang 30 cm', 'Baik', 4),
-('03.06.003', 'Kabel Keler', 'Krisbow', 'Panjang 1 meter', 'Baik', 18),
-('03.06.004', 'Kunci Cadangan Gedung', '', 'Warna silver', 'Baik', 30),
-('03.06.005', 'Laptop', 'ASUS', 'Warna hitam', 'Baik', 2),
-('03.06.006', 'LCD Proyektor', 'Epson', 'Warna Putih', 'Baik', 14),
-('03.06.007', 'Mouse', 'M-tech', '', '', 5),
-('03.06.008', 'Speaker', 'JBL', '', '', 6);
+INSERT INTO `barang` (`IdBarang`, `BrgNama`, `BrgMerk`, `BrgJumlah`) VALUES
+('03.06.001', 'Headset', 'Xiaomi', 10),
+('03.06.002', 'Kabel HDMI', 'Sony High Speed', 4),
+('03.06.003', 'Kabel Keler', 'Krisbow', 18),
+('03.06.004', 'Kunci Cadangan Gedung', '', 30),
+('03.06.005', 'Laptop', 'ASUS', 2),
+('03.06.006', 'LCD Proyektor', 'Epson', 14),
+('03.06.007', 'Mouse', 'M-tech', 5),
+('03.06.008', 'Speaker', 'JBL', 6);
 
 -- --------------------------------------------------------
 
@@ -86,6 +84,7 @@ CREATE TABLE `transaksi` (
   `Nama` varchar(50) NOT NULL,
   `SwKelas` varchar(10) NOT NULL,
   `BrgNama` varchar(50) NOT NULL,
+  `Spesifikasi` varchar(225) NOT NULL,
   `qty` int(3) NOT NULL,
   `TglPinjam` date NOT NULL,
   `TglKembali` date NOT NULL,
@@ -96,8 +95,10 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`IdTransaksi`, `IdBarang`, `Nama`, `SwKelas`, `BrgNama`, `qty`, `TglPinjam`, `TglKembali`, `status`) VALUES
-('TR.161121.1', '03.06.003', 'Riris', 'X TKJ 1', 'Kabel', 1, '2021-11-16', '2021-11-16', 'Kembali');
+INSERT INTO `transaksi` (`IdTransaksi`, `IdBarang`, `Nama`, `SwKelas`, `BrgNama`, `Spesifikasi`, `qty`, `TglPinjam`, `TglKembali`, `status`) VALUES
+('TR.161121.1', '03.06.003', 'Riris', 'X TKJ 1', 'Kabel', '100 cm', 1, '2021-11-16', '2021-11-16', 'Kembali'),
+('TR.181121.2', '03.06.001', 'Riris sil', 'X TKJ 1', 'Headset', 'Warna Hitam', 1, '2021-11-14', '2021-11-18', 'Kembali'),
+('TR.181121.3', '03.06.001', 'vinka', 'X TKJ 1', 'Headset', 'Warna Hitam 1 biji ', 1, '2021-11-18', '2021-11-18', 'Kembali');
 
 -- --------------------------------------------------------
 

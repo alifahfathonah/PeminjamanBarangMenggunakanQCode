@@ -13,8 +13,9 @@ require_once('../config.php');
 		$TglKembali = $_POST['TglKembali'];
 		$status = $_POST['status'];
 
-		
-	$sql = mysqli_query($conn,"INSERT INTO transaksi (IdTransaksi, IdBarang, Nama, SwKelas, BrgNama, Spesifikasi, qty, TglPinjam, TglKembali, status) VALUES ($IdTransaksi, $IdBarang, $Nama, $SwKelas, $BrgNama, $Spesifikasi, $qty, $TglPinjam, $TglKembali, $status)");
+		$sql = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
+            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
+	
 	
 	if ($sql) {
 		echo json_encode(array('RESPONSE' => 'SUCCESS'));

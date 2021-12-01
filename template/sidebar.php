@@ -60,7 +60,7 @@
           </p>
         </a>
       </li>
-      <li class="nav-item has-treeview menu-open">
+      <li class="nav-item">
         <a href="#" class="nav-link active">
           <p>
             Laporan

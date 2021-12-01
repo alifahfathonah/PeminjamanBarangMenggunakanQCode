@@ -21,7 +21,29 @@ ob_start();
 <html>
 <head>
 </head>
-<body>
+<body onLoad="javascript:print()"> 
+	<style type="text/css">
+	.style5 {font-size: 24px}
+	</style>
+
+	<div class="panel-heading">
+		<table width="100%">
+		<tr>
+	<td><div align="center">
+	<div align="center">
+        <table width="100%">
+            <tr>
+                <td width="25" align="center"><img src="http://localhost/PeminjamanBarangMenggunakanQCode/img/logo.png" height="75px" width="75px"></td>
+                <td align="center"><h3>QR Code Siswa SMK Negeri 1 Turen</h3>
+                Jl. Panglima Sudirman No.41, Turen, Kec. Turen, Malang, Jawa Timur 65175</td>
+            </tr>
+        </table>
+        <hr>
+    </div>
+	</td>
+	</tr>
+	</table>
+	</div>
     <?php
         $no = 1;
         $query = "SELECT * FROM siswa";

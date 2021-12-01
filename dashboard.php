@@ -100,27 +100,7 @@ while($row = mysqli_fetch_array($produk)){
               <a href="transaksi-peminjaman.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-              <h3>
-              <?php include "config.php";
-                    $result=mysqli_query($conn,"SELECT count(*) as total FROM transaksi WHERE status = 'Kembali'");
-                    $data=mysqli_fetch_assoc($result);
-                    echo $data['total']; 
-              ?>
-              </h3>
-
-                <p>Dikembalikan</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-folder"></i>
-              </div>
-              <a href="transaksi-pengembalian.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+          
          
           <div style="width: 800px;height: 800px">
 		<canvas id="myChart"></canvas>

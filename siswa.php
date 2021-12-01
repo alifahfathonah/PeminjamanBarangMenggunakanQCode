@@ -41,7 +41,7 @@ include'config.php';
     
     <div class="col-sm-6">
         <a href="siswa-input.php" class="btn btn-success">Tambah Data</a>
-        <a href="download-pdf-qr-siswa.php" class="btn btn-primary">Download QR Code</a>
+        <!-- <a href="download-pdf-qr-siswa.php" class="btn btn-primary">Download QR Code</a> -->
 	</div>
     
     <br>
@@ -118,7 +118,6 @@ include'config.php';
                 <td>
                     <a href="siswa-detail.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>"><i class="nav-icon fas fa-eye" title="Detail">&#xE254;</i></a>
                     <a href="siswa-edit.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>"><i class="nav-icon fas fa-edit" title="Edit">&#xE254;</i></a>
-                    <a href="generate-qr-siswa.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>"><i class="nav-icon fas fa-qrcode" title="QrCode">&#xE254;</i></a>
 					<a href="siswa-delete.php?IdSiswa=<?php echo $r_tampil_siswa['IdSiswa'];?>" onclick = "return confirm ('Apakah Anda Yakin Akan Menghapus Data Ini?')" class="tombol" style="color:#ef8157; font-weight:bold"><i class="nav-icon fas fa-trash" title="Delete">&#xE872;</i></a>
                 </td>
             </tr>

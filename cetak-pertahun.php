@@ -10,8 +10,16 @@ include "config.php" ;
     <table width="100%">
 	<tr>
 	<td><div align="center">
-	<div align="center">Cetak Data Pertahun <hr> Tahun : <?php echo $_GET['thn_ini']; ?>
-</div>
+	<div align="center">
+        <table width="100%">
+            <tr>
+                <td width="25" align="center"><img src="http://localhost/PeminjamanBarangMenggunakanQCode/img/logo.png" height="75px" width="75px"></td>
+                <td align="center"><h3>Laporan Transaksi Tahunan Peminjaman Barang SMK Negeri 1 Turen</h3>
+                Jl. Panglima Sudirman No.41, Turen, Kec. Turen, Malang, Jawa Timur 65175</td>
+            </tr>
+        </table>
+        <hr> Tahun : <?php echo $_GET['thn_ini']; ?>
+    </div>
 	</td>
 	</tr>
 </table>

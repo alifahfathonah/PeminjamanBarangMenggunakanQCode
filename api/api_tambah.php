@@ -13,10 +13,9 @@ require_once('../config.php');
 		$TglKembali = $_POST['TglKembali'];
 		$status = $_POST['status'];
 
-	$sql = $conn->prepare("INSERT INTO transaksi (IdTransaksi, IdBarang, Nama, SwKelas, BrgNama, Spesifikasi, qty, TglPinjam, TglKembali, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$sql->bind_param('ssdd', $IdTransaksi, $IdBarang, $Nama ,
-	$SwKelas , $BrgNama , $Spesifikasi , $qty , $TglPinjam , $TglKembali , $status );
-	$sql->execute();
+		
+	$sql = mysqli_query($conn,"INSERT INTO transaksi (IdTransaksi, IdBarang, Nama, SwKelas, BrgNama, Spesifikasi, qty, TglPinjam, TglKembali, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	
 	if ($sql) {
 		echo json_encode(array('RESPONSE' => 'SUCCESS'));
 		//header("location:../transaksi-peminjaman.php");

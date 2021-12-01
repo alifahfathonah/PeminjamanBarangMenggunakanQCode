@@ -86,7 +86,7 @@
     </table>
         <br>
         <div class="col-12">
-          <a href="siswa.php" class="btn btn-primary float-right">Kembali</a>
+          <a href="barang.php" class="btn btn-primary float-right">Kembali</a>
         </div>
  
 </body>

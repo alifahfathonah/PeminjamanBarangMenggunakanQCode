@@ -1,8 +1,8 @@
 <?php
 require_once('../config.php');
 
-if (isset($_POST['IdTransaksi']) && isset($_POST['IdBarang']) && isset($_POST['Nama']) && isset($_POST['SwKelas']) && isset($_POST['BrgNama'])
-    && isset($_POST['Spesifikasi']) && isset($_POST['qty']) && isset($_POST['TglPinjam']) && isset($_POST['TglKembali']) && isset($_POST['status'])) {
+if (isset($_POST['IdTransaksi']) || isset($_POST['IdBarang']) || isset($_POST['Nama']) || isset($_POST['SwKelas']) || isset($_POST['BrgNama'])
+|| isset($_POST['Spesifikasi']) || isset($_POST['qty']) || isset($_POST['TglPinjam']) || isset($_POST['TglKembali']) || isset($_POST['status'])) {
 		$IdTransaksi = $_POST['IdTransaksi']; 
 		$IdBarang = $_POST['IdBarang']; 
 		$Nama = $_POST['Nama']; 

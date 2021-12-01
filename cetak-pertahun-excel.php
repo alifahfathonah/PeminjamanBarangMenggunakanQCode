@@ -9,7 +9,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 //membuat heading dari tabel dengan nama masing" kolom
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
-$sheet->setCellValue('A1', 'Data Laporan Transaksi Peminjaman Barang SMK Negeri 1 Turen');
+$sheet->setCellValue('A1', 'Laporan Tahunan Transaksi Peminjaman Barang SMK Negeri 1 Turen');
 $sheet->setCellValue('A3', 'NO');
 $sheet->setCellValue('B3', 'ID Transaksi');
 $sheet->setCellValue('C3', 'ID Barang');

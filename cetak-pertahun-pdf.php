@@ -5,11 +5,18 @@
     use Dompdf\Dompdf;                  // panggil referensi namespace dari library Dompdf
     use Dompdf\Options;
 
-    $html = '<html><center><h3>Daftar Transaksi Peminjaman Barang SMK Negeri 1 Turen</h3></center><hr/><br/>';
+    $html = '<html>
+            <table width="100%">
+                <tr>
+                <td width="25" align="center"><img src="http://localhost/PeminjamanBarangMenggunakanQCode/img/logo.png" height="75px" width="75px"></td>
+                <td align="center"><h3>Laporan Transaksi Tahunan Peminjaman Barang SMK Negeri 1 Turen</h3>
+                Jl. Panglima Sudirman No.41, Turen, Kec. Turen, Malang, Jawa Timur 65175</td>
+                </tr>
+            </table><hr/><br/>';
     $html .= '<table width="100%" border="1" cellspacing="0" cellpadding="2">
                 <thead>
                     <tr>
-                        <th >No</td>
+                        <th>No</th>
                         <th>ID Transaksi</th>
                         <th>ID Barang</th>
                         <th>Nama</th>

@@ -37,6 +37,9 @@
     </div>
     <!-- /.content-header -->
 
+    <!-- <div class="col-sm-6">
+        <a href="coba-download.php" class="btn btn-primary">Download QR Code</a>
+	</div> -->
     <!-- Main content -->
     <section class="content">
       <div class="row">

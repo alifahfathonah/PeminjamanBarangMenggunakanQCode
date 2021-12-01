@@ -19,8 +19,8 @@ if (isset($_POST['IdTransaksi']) && isset($_POST['IdBarang']) && isset($_POST['N
 	$SwKelas , $BrgNama , $Spesifikasi , $qty , $TglPinjam , $TglKembali , $status );
 	$sql->execute();
 	if ($sql) {
-		//echo json_encode(array('RESPONSE' => 'SUCCESS'));
-		header("location:../transaksi-peminjaman.php");
+		echo json_encode(array('RESPONSE' => 'SUCCESS'));
+		//header("location:../transaksi-peminjaman.php");
 	} else {
 		echo json_encode(array('RESPONSE' => 'FAILED'));
 	}

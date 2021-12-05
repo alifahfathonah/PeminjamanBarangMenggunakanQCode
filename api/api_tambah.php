@@ -16,7 +16,7 @@ require_once('../config.php');
 		$status = $json->status';
 
 		$sql = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
-            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
+            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status');
 	
 	
 	if ($sql) {

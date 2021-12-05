@@ -131,7 +131,7 @@ include'config.php';
                    
                   </div>
                   <div class="col-12">
-                    <a href="scan.php" class="btn btn-success">Scan</a>
+                    <!-- <a href="scan.php" class="btn btn-success">Scan</a> -->
                     <a href="transaksi-peminjaman.php" class="btn btn-danger float-right">Batal</a>
                     <input type="submit" value="Simpan" class="btn btn-primary float-right">
                   </div>

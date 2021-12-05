@@ -2,16 +2,18 @@
 require_once('../config.php');
 
  
-		$IdTransaksi = $_POST['IdTransaksi']; 
-		$IdBarang = $_POST['IdBarang']; 
-		$Nama = $_POST['Nama']; 
-		$SwKelas = $_POST['SwKelas'];
-		$BrgNama = $_POST['BrgNama'];
-		$Spesifikasi = $_POST['Spesifikasi'];
-		$qty = $_POST['qty']; 
-		$TglPinjam = $_POST['TglPinjam']; 
-		$TglKembali = $_POST['TglKembali'];
-		$status = $_POST['status'];
+		$json = json_decode($_POST);
+
+		$IdTransaksi = $json->IdTransaksi'; 
+		$IdBarang = $json->IdBarang'; 
+		$Nama = $json->Nama'; 
+		$SwKelas = $json->SwKelas';
+		$BrgNama = $json->BrgNama';
+		$Spesifikasi = $json->Spesifikasi';
+		$qty = $json->qty'; 
+		$TglPinjam = $json->TglPinjam'; 
+		$TglKembali = $json->TglKembali';
+		$status = $json->status';
 
 		$sql = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
             '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");

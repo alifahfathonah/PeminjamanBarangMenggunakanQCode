@@ -1,28 +1,34 @@
 <?php
 require_once('../config.php');
 
- 
-		$json = json_decode($_POST);
+$request = file_get_contents("php://input");
+$json = json_decode($request, true);
+$IdBarang = $json['IdBarang'];
+$Nama = $json['Nama'];
+$SwKelas = $json['SwKelas'];
+$BrgNama = $json['BrgNama'];
+$Spesifikasi = $json['Spesifikasi'];
+$qty = $json['qty'];
+$TglPinjam = $json['TglPinjam'];
+$TglKembali = isset($json['TglKembali']) ? $json['TglKembali'] : '';
+$status = $json['status'];
 
-		$IdTransaksi = $json->IdTransaksi'; 
-		$IdBarang = $json->IdBarang'; 
-		$Nama = $json->Nama'; 
-		$SwKelas = $json->SwKelas';
-		$BrgNama = $json->BrgNama';
-		$Spesifikasi = $json->Spesifikasi';
-		$qty = $json->qty'; 
-		$TglPinjam = $json->TglPinjam'; 
-		$TglKembali = $json->TglKembali';
-		$status = $json->status';
+$query = mysqli_query($conn, "SELECT max(IdTransaksi) as kodeTerbesar FROM transaksi");
+$data = mysqli_fetch_array($query);
+$kodeTransaksi = $data['kodeTerbesar'];
 
-		$sql = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
-            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status');
-	
-	
-	if ($sql) {
-		echo json_encode(array('RESPONSE' => 'SUCCESS'));
-		//header("location:../transaksi-peminjaman.php");
-	} else {
-		echo json_encode(array('RESPONSE' => 'FAILED'));
-	}
- 
+$urutan = (int) substr($kodeTransaksi, 10, 3);
+$urutan++;
+
+$huruf = "TR.";
+$waktu = date('dmy');
+$kodeTransaksi = $huruf . $waktu . "." . $urutan;
+
+$sql = mysqli_query($conn, "INSERT INTO transaksi VALUES ('$kodeTransaksi','$IdBarang','$Nama','$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
+header('Content-type: application/json');
+if ($sql) {
+	echo json_encode(array('RESPONSE' => 'SUCCESS', 'status' => 200));
+	// header("location:../transaksi-peminjaman.php");
+} else {
+	echo json_encode(array('RESPONSE' => 'FAILED', 'status' => 500));
+}

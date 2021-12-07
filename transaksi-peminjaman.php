@@ -125,7 +125,7 @@ include'config.php';
 
                //$sql="SELECT * FROM tbtransaksi ORDER BY idtransaksi DESC"; 
                $q_tampil_transaksi = mysqli_query($conn, $query); 
-
+               
                /* Pengecekan apakah terdapat data di database, jika ada, tampilkan*/ 
                if(mysqli_num_rows($q_tampil_transaksi) > 0) { 
 

@@ -11,8 +11,9 @@
     $Spesifikasi = $_POST['Spesifikasi'];
     $qty = $_POST['qty']; 
     $TglPinjam = $_POST['TglPinjam']; 
+    $TglKembali = $_POST['TglPinjam'];
     $status = $_POST['status'];
-
+    // var_dump($_POST); die;
     //melakukan input
     /*$sql = "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
             '$SwKelas','$BrgNama','$qty','$TglPinjam','$TglKembali','$status')"; 
@@ -33,9 +34,10 @@
     //proses    
     else{
         $insert = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
-            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','','$status')");
+            '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
             $pinjam = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='pinjam'");
             $kembali = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='kembali'");
+            
             if($insert){
                     if($pinjam){
                             //update stok

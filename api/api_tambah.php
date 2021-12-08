@@ -27,6 +27,12 @@ $kodeTransaksi = $huruf . $waktu . "." . $urutan;
 $sql = mysqli_query($conn, "INSERT INTO transaksi VALUES ('$kodeTransaksi','$IdBarang','$Nama','$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
 header('Content-type: application/json');
 if ($sql) {
+	$selSto =mysqli_query($conn, "SELECT * FROM barang WHERE IdBarang='$IdBarang'");
+    $sto    =mysqli_fetch_array($selSto);
+    $stok    =$sto['BrgJumlah'];
+    //menghitung sisa stok
+    $sisa    =$stok-$qty;
+	$upstok= mysqli_query($conn, "UPDATE barang SET BrgJumlah='$sisa' WHERE IdBarang='$IdBarang'");
 	echo json_encode(array('RESPONSE' => 'SUCCESS', 'status' => 200));
 	// header("location:../transaksi-peminjaman.php");
 } else {

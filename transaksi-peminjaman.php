@@ -79,53 +79,49 @@ include'config.php';
                     $posisi = ($hal - 1) * $batas; 
                     $nomor = $posisi+1; 
                 }
-
                 if($_SERVER['REQUEST_METHOD'] == "POST") { 
                     $pencarian = trim(mysqli_real_escape_string($conn, $_POST['pencarian'])); 
                     if($pencarian != "") { 
-                        $sql = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty, transaksi.TglPinjam, 
-                                transaksi.TglKembali, transaksi.status FROM transaksi 
-                                INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                                INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
-								WHERE transaksi.IdTransaksi LIKE '%$pencarian%' 
-                                OR  transaksi.TglPinjam LIKE '%$pencarian%'
-                                OR  transaksi.TglKembali LIKE '%$pencarian%'
-                                OR  transaksi.Nama LIKE '%$pencarian%'
-                                OR  transaksi.status LIKE '%$pencarian%'
-								OR  barang.IdBarang LIKE '%$pencarian%'
-                                OR  barang.BrgNama LIKE '%$pencarian%'
-								OR  siswa.SwKelas LIKE '%$pencarian%'"; 
+                        $sql = "SELECT * FROM transaksi 
+                                WHERE status = 'Pinjam'
+                                AND (IdTransaksi LIKE '%$pencarian%' 
+                                OR  TglPinjam LIKE '%$pencarian%'
+                                OR  TglKembali LIKE '%$pencarian%'
+                                OR  Nama LIKE '%$pencarian%'
+                                OR  status LIKE '%$pencarian%')";
                         $query = $sql; 
                         $queryJml = $sql; 
 
                     } else { 
-                        $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty,transaksi.TglPinjam, 
-                                transaksi.TglKembali, transaksi.status FROM transaksi 
-                                INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                                INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
-                                WHERE transaksi.status = 'Pinjam'
-								ORDER BY transaksi.IdTransaksi DESC 
-								LIMIT $posisi, $batas"; 
+                        // $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty,transaksi.TglPinjam, 
+                        //         transaksi.TglKembali, transaksi.status FROM transaksi 
+                        //         INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
+                        //         INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
+                        //         WHERE transaksi.status = 'Pinjam'
+						// 		ORDER BY transaksi.IdTransaksi DESC 
+                        // 		LIMIT $posisi, $batas"; 
+                        $query = "SELECT * FROM transaksi WHERE status = 'Pinjam' ORDER BY transaksi.IdTransaksi DESC LIMIT $posisi, $batas";
                         $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'"; 
                         $no = $posisi * 1; 
                     }
                 }
                 else { 
-                            $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty, transaksi.TglPinjam, 
-                            transaksi.TglKembali, transaksi.status FROM transaksi 
-                            INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
-                            INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
-                            WHERE transaksi.status = 'Pinjam'
-                            ORDER BY transaksi.IdTransaksi DESC 
-                            LIMIT $posisi, $batas"; 
-                            // $query = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'";
+                        // $query = "SELECT transaksi.IdTransaksi, b.IdBarang, b.BrgNama, transaksi.Nama, siswa.SwKelas,transaksi.Spesifikasi, transaksi.qty, transaksi.TglPinjam, 
+                        //     transaksi.TglKembali, transaksi.status FROM transaksi 
+                        //     INNER JOIN barang b ON transaksi.IdBarang = b.IdBarang 
+                        //     INNER JOIN siswa ON transaksi.SwKelas = siswa.SwKelas
+                        //     WHERE transaksi.status = 'Pinjam'
+                        //     ORDER BY transaksi.IdTransaksi DESC 
+                        //     LIMIT $posisi, $batas"; 
+                            $query = "SELECT * FROM transaksi WHERE status = 'Pinjam' ORDER BY transaksi.IdTransaksi DESC LIMIT $posisi, $batas";
                         $queryJml = "SELECT * FROM transaksi WHERE transaksi.status = 'Pinjam'"; 
                         $no = $posisi * 1; 
                 }
 
                //$sql="SELECT * FROM tbtransaksi ORDER BY idtransaksi DESC"; 
-               $q_tampil_transaksi = mysqli_query($conn, $query); 
-               
+                //   $q_tampil_transaksi = mysqli_query($conn, "SELECT * FROM transaksi WHERE status = 'Pinjam'");
+               $q_tampil_transaksi = mysqli_query($conn, $query);
+                
                /* Pengecekan apakah terdapat data di database, jika ada, tampilkan*/ 
                if(mysqli_num_rows($q_tampil_transaksi) > 0) { 
 

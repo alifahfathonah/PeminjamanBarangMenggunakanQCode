@@ -35,8 +35,8 @@
     else{
         $insert = mysqli_query($conn, "INSERT INTO transaksi VALUES('$IdTransaksi','$IdBarang','$Nama',
             '$SwKelas','$BrgNama','$Spesifikasi','$qty','$TglPinjam','$TglKembali','$status')");
-            $pinjam = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='pinjam'");
-            $kembali = mysqli_query($conn, "SELECT status FROM transaksi WHERE status='kembali'");
+            $pinjam = mysqli_query($conn, "SELECT * FROM transaksi WHERE status='pinjam'");
+            $kembali = mysqli_query($conn, "SELECT * FROM transaksi WHERE status='kembali'");
             
             if($insert){
                     if($pinjam){
